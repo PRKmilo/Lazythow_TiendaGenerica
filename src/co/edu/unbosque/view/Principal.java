@@ -11,24 +11,24 @@ import java.awt.Font;
 import java.awt.Color;
 
 public class Principal extends JFrame {
+	private JButton btnClientes;
+	private JButton btnProducto;
+	private JButton btnVentas;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	public static final String Clientes="clientes";
+	public static final String Producto="producto";
+	public static final String Ventas="ventas";
+	public static final String Pdf="pdf";
+	public static final String Registro="Registro";
+	
 
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Principal frame = new Principal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
@@ -42,24 +42,29 @@ public class Principal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnClientes = new JButton("Cliente");
+		btnClientes = new JButton("Cliente");
 		btnClientes.setBounds(62, 34, 159, 42);
+		btnClientes.setActionCommand(Clientes);
 		contentPane.add(btnClientes);
 		
-		JButton btnProducto = new JButton("Producto");
+		 btnProducto = new JButton("Producto");
 		btnProducto.setBounds(62, 97, 159, 42);
+		btnProducto.setActionCommand(Producto);
 		contentPane.add(btnProducto);
 		
-		JButton btnVentas = new JButton("Ventas");
+		 btnVentas = new JButton("Ventas");
 		btnVentas.setBounds(62, 172, 159, 42);
+		btnVentas.setActionCommand(Ventas);
 		contentPane.add(btnVentas);
 		
-		JButton btnNewButton = new JButton("GenerarPdf");
+		 btnNewButton = new JButton("GenerarPdf");
 		btnNewButton.setBounds(269, 158, 183, 70);
+		btnNewButton.setActionCommand(Pdf);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("RegistrarEmpresa");
+		 btnNewButton_1 = new JButton("RegistrarEmpresa");
 		btnNewButton_1.setBounds(269, 34, 183, 100);
+		btnNewButton_1.setActionCommand(Registro);
 		contentPane.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("Tienda Generica");
@@ -71,5 +76,70 @@ public class Principal extends JFrame {
 		lblNewLabel_4_1.setFont(new Font("Tahoma", Font.BOLD, 8));
 		lblNewLabel_4_1.setBounds(269, 131, 214, 31);
 		contentPane.add(lblNewLabel_4_1);
+		
+		
+	}
+
+	public JButton getBtnClientes() {
+		return btnClientes;
+	}
+
+	public void setBtnClientes(JButton btnClientes) {
+		this.btnClientes = btnClientes;
+	}
+
+	public JButton getBtnProducto() {
+		return btnProducto;
+	}
+
+	public void setBtnProducto(JButton btnProducto) {
+		this.btnProducto = btnProducto;
+	}
+
+	public JButton getBtnVentas() {
+		return btnVentas;
+	}
+
+	public void setBtnVentas(JButton btnVentas) {
+		this.btnVentas = btnVentas;
+	}
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+
+	public void setBtnNewButton(JButton btnNewButton) {
+		this.btnNewButton = btnNewButton;
+	}
+
+	public JButton getBtnNewButton_1() {
+		return btnNewButton_1;
+	}
+
+	public void setBtnNewButton_1(JButton btnNewButton_1) {
+		this.btnNewButton_1 = btnNewButton_1;
+	}
+
+	
+	
+
+	public static String getClientes() {
+		return Clientes;
+	}
+
+	public static String getProducto() {
+		return Producto;
+	}
+
+	public static String getVentas() {
+		return Ventas;
+	}
+
+	public static String getPdf() {
+		return Pdf;
+	}
+
+	public static String getRegistro() {
+		return Registro;
 	}
 }

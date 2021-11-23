@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class Configuration_Properties {
 
 	private Properties prop=new Properties();
-	private  String archivoprop="C:\\Data\\config.properties";
+	private  String archivoprop=".\\Data\\config.properties";
 
 	public int escribirPropiedades(String Nombre_Tienda,String Tipo_comercio, String NIT,
 			String Ciudad,String IVA,String interes,String banco,String N_cuenta,String 
@@ -58,5 +58,17 @@ public class Configuration_Properties {
 		}
 		return linea;
 		
+	}
+	public String getProperty(String key) {
+		String Property="";
+		try {
+			prop.load(new FileInputStream(archivoprop));
+			Property=prop.getProperty(key);
+			System.out.println(Property+" este es el property de el getproperty");
+			
+		}catch(IOException ex) {
+			return null;
+		}
+		return Property;
 	}
 }
