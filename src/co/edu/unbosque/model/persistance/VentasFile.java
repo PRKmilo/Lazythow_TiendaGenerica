@@ -11,13 +11,13 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.ClienteDTO;
-import co.edu.unbosque.model.JugadorDTO;
 import co.edu.unbosque.model.ProductoDTO;
 import co.edu.unbosque.model.VentaDTO;
 
 public class VentasFile {
 	private String ruta1="./Data/cliente.out";
 	private String ruta2="./Data/producto.out";
+	private String ruta3="./Data/Venta.out";
 	private File f;
 	private FileOutputStream fos;     
 	private DataOutputStream dos;
@@ -36,7 +36,7 @@ public class VentasFile {
 		}
 		return 0;
 	}
-	public ArrayList<ProductoDTO> leerArchivoEmpleado() {
+	public ArrayList<ProductoDTO> leerArchivoproducto() {
 		ArrayList<ProductoDTO> nomina = null;
 		try {
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream(ruta2));
@@ -72,5 +72,6 @@ public class VentasFile {
 		}
 		return nomina;
 	}
+	
 
 }
