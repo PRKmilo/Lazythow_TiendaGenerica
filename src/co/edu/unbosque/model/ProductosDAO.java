@@ -18,7 +18,7 @@ public class ProductosDAO {
 	public void agregarProducto(ProductoDTO producto){
 		
 		ArrayList<ProductoDTO> nomina1=new ArrayList<ProductoDTO>();
-		if(archivoVenta.leerArchivocliente() == null) {
+		if(archivoVenta.leerArchivoproducto() == null) {
 			nomina1=new ArrayList<ProductoDTO>();
 		}else {
 			 nomina1= archivoVenta.leerArchivoproducto();
