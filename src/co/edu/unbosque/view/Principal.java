@@ -21,7 +21,12 @@ public class Principal extends JFrame {
 	public static final String Ventas="ventas";
 	public static final String Pdf="pdf";
 	public static final String Registro="Registro";
-	
+	private Juego cliente;
+	private Venta venta;
+	private Producto producto;
+	private Formulario2 registro;
+	private Formulario form_cliente;
+
 
 	private JPanel contentPane;
 
@@ -34,6 +39,11 @@ public class Principal extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal() {
+		cliente=new Juego();
+		venta=new Venta();
+		producto=new Producto();
+		registro=new Formulario2();
+		form_cliente=new Formulario();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 521, 307);
 		contentPane = new JPanel();
@@ -78,6 +88,55 @@ public class Principal extends JFrame {
 		contentPane.add(lblNewLabel_4_1);
 		
 		
+	}
+	
+	
+	public Formulario getForm_cliente() {
+		return form_cliente;
+	}
+
+
+	public void setForm_cliente(Formulario form_cliente) {
+		this.form_cliente = form_cliente;
+	}
+
+
+	public Formulario2 getregistro() {
+		return registro;
+	}
+	
+
+	public void setRegistro(Formulario2 registro) {
+		this.registro = registro;
+	}
+
+
+
+
+	public Venta getVenta() {
+		return venta;
+	}
+
+	public Producto getproducto() {
+		return producto;
+	}
+	public void setProducto(Producto producto) {
+		this.producto = producto;
+	}
+
+
+
+	public void setVenta(Venta venta) {
+		this.venta = venta;
+	}
+
+
+	public Juego getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Juego cliente) {
+		this.cliente = cliente;
 	}
 
 	public JButton getBtnClientes() {

@@ -19,6 +19,14 @@ import java.awt.event.ActionEvent;
 public class Juego extends JFrame {
 
 	private JPanel contentPane;
+	private JButton btnNewButton;
+	private JButton btnNewButton_1;
+	private JButton btnNewButton_2;
+	public static final String Eliminar="eliminar";
+	public static final String Actualizar="actualizar";
+	public static final String Registrar="registrar";
+
+	
 
 	/**
 	 * Launch the application.
@@ -55,23 +63,58 @@ public class Juego extends JFrame {
 		lblNewLabel_2.setBounds(120, 25, 247, 67);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnNewButton = new JButton("Eliminar Cliente");
+	    btnNewButton = new JButton("Eliminar Cliente");
+	    btnNewButton.setActionCommand(Eliminar);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton.setBounds(314, 135, 146, 55);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Actualizar");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+	     btnNewButton_1 = new JButton("Actualizar");
+		btnNewButton_1.setActionCommand(Actualizar);
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_1.setBounds(10, 135, 126, 55);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("Registrar");
+		 btnNewButton_2 = new JButton("Registrar");
+		 btnNewButton_2.setActionCommand(Registrar);
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_2.setBounds(146, 135, 148, 55);
 		contentPane.add(btnNewButton_2);
+	}
+	
+	public static String getEliminar() {
+		return Eliminar;
+	}
+
+	public static String getActualizar() {
+		return Actualizar;
+	}
+
+	public static String getRegistrar() {
+		return Registrar;
+	}
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+
+	public void setBtnNewButton(JButton btnNewButton) {
+		this.btnNewButton = btnNewButton;
+	}
+
+	public JButton getBtnNewButton_1() {
+		return btnNewButton_1;
+	}
+
+	public void setBtnNewButton_1(JButton btnNewButton_1) {
+		this.btnNewButton_1 = btnNewButton_1;
+	}
+
+	public JButton getBtnNewButton_2() {
+		return btnNewButton_2;
+	}
+
+	public void setBtnNewButton_2(JButton btnNewButton_2) {
+		this.btnNewButton_2 = btnNewButton_2;
 	}
 }
