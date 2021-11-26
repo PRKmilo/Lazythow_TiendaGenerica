@@ -2,6 +2,7 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import co.edu.unbosque.model.ClienteDTO;
 import co.edu.unbosque.model.Fachada;
 import co.edu.unbosque.view.Principal;
 import co.edu.unbosque.view.View;
@@ -28,6 +29,7 @@ public class Controller implements ActionListener{
 		gui.getCliente().getBtnNewButton_2().addActionListener(oyenteDeaccion);
 		gui.getCliente().getBtnNewButton_1().addActionListener(oyenteDeaccion);
 		gui.getCliente().getBtnNewButton().addActionListener(oyenteDeaccion);
+		gui.getForm_cliente().getBtnRegistrarTienda().addActionListener(oyendedecliente);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -77,8 +79,25 @@ public class Controller implements ActionListener{
 			
 		}
 		
+		
+		
 	};
 	
-	
+	ActionListener oyendedecliente=new ActionListener(){
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("se espucho el oyente del cliente");
+			String cedula=gui.getForm_cliente().getTxtCedula().getText();
+			String nombre=gui.getForm_cliente().getTxtNombre().getText();
+			String direccion=gui.getForm_cliente().getTxtdireccion().getText();
+			int telefono=Integer.parseInt(gui.getForm_cliente().getTxttelefono().getText());
+			String correo=gui.getForm_cliente().getTtxtcorreoelectronic().getText();
+			ClienteDTO nuevo_cliente=new ClienteDTO(nombre,cedula,direccion,telefono,correo);
+			Fachada.getClientedao().agregarCliente(nuevo_cliente);
+		}
+		
+	};
 
 }
