@@ -78,12 +78,12 @@ public class FormularioVenta extends JFrame {
 		Jframe.add(txtCodigoDeProducto);
 		txtCodigoDeProducto.setColumns(10);
 		
-		JLabel lblNewLabel_4 = new JLabel("Producto");
+		JLabel lblNewLabel_4 = new JLabel("Venta");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel_4.setBounds(251, 26, 133, 31);
 		Jframe.add(lblNewLabel_4);
 		
-		JButton btnRegistrarProducto = new JButton("Registrar Producto");
+		JButton btnRegistrarProducto = new JButton("Registrar Venta");
 		btnRegistrarProducto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
