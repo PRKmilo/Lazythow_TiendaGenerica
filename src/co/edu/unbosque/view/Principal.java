@@ -24,7 +24,7 @@ public class Principal extends JFrame {
 	private Juego cliente;
 	private Venta venta;
 	private Producto producto;
-	private Formulario2 registro;
+	private Formulario2 registro2;
 	private Formulario form_cliente;
 
 
@@ -42,7 +42,7 @@ public class Principal extends JFrame {
 		cliente=new Juego();
 		venta=new Venta();
 		producto=new Producto();
-		registro=new Formulario2();
+		registro2=new Formulario2();
 		form_cliente=new Formulario();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 521, 307);
@@ -102,12 +102,12 @@ public class Principal extends JFrame {
 
 
 	public Formulario2 getregistro() {
-		return registro;
+		return registro2;
 	}
 	
 
 	public void setRegistro(Formulario2 registro) {
-		this.registro = registro;
+		this.registro2 = registro;
 	}
 
 
