@@ -24,7 +24,8 @@ public class VentasFile {
 	private FileInputStream fis;     
 	private DataInputStream dis;
 	private ClienteDTO cliente;
-	private ProductoDTO venta;
+	private ProductoDTO Producto;
+	private VentaDTO ventas;
 	
 	public int escribirArchivoproducto(ArrayList<ProductoDTO> Staff_productos) {
 		try {
@@ -73,7 +74,28 @@ public class VentasFile {
 		return nomina;
 	}
 	
+	public int escribirArchivoNominaVentaenta(ArrayList<VentaDTO> Staff_Ventas) {
+		try {
+			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(ruta3));
+			salida.writeObject(Staff_Ventas);
+			salida.close();
+		}catch(IOException e) {
+			return -1;
+		}
+		return 0;
+	}
 	
+	public ArrayList<VentaDTO> leerArchivoVenta() {
+		ArrayList<VentaDTO> nomina = null;
+		try {
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream(ruta3));
+			nomina = (ArrayList<VentaDTO>)in.readObject();
+			in.close();
+		} catch (IOException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return nomina;
+	}
 	
-
 }
