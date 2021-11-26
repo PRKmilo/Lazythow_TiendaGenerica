@@ -14,8 +14,7 @@ public class Controller implements ActionListener{
 		Fachada=new Fachada();
 		gui=new Principal();
 		gui.setVisible(true);
-		System.out.println((Fachada.getCP().escribirPropiedades("tienda", "drogeria", "12234", "Bogota", "0.16", "0.02", "Banco", "1001348", "elkin")+" este es el escribir"));
-		Fachada.getCP().leerproperties();
+		
 		
 		asignaroyentes();
 	
@@ -30,6 +29,7 @@ public class Controller implements ActionListener{
 		gui.getCliente().getBtnNewButton_1().addActionListener(oyenteDeaccion);
 		gui.getCliente().getBtnNewButton().addActionListener(oyenteDeaccion);
 		gui.getForm_cliente().getBtnRegistrarTienda().addActionListener(oyendedecliente);
+		gui.getregistro().getBtnRegistrarTienda1().addActionListener(oyendetienda);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -99,5 +99,27 @@ public class Controller implements ActionListener{
 		}
 		
 	};
+	
+	ActionListener oyendetienda=new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+		String nombred=gui.getregistro().getTxtNombreEmpresa().getText();
+		String tipocomer=gui.getregistro().getTxtTipoComercio().getText();
+		String nit=gui.getregistro().getTxtNit().getText();
+		String ciudad=gui.getregistro().getTxtCiudad().getText();
+		String iva=gui.getregistro().getTxtValorIva().getText();
+		String banco=gui.getregistro().getTxtNombreDelBanco().getText();
+		String Ncuenta=gui.getregistro().getTxtNumeroCuenta().getText();
+		String nombreg=gui.getregistro().getTxtNombreDelGErente().getText();
+		
+		Fachada.getCP().escribirPropiedades(nombred, tipocomer, nit, ciudad, iva, iva, banco, Ncuenta, nombreg);
+		Fachada.getCP().leerproperties();
+		}
+		
+	};
+		
+	
 
 }
