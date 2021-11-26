@@ -180,4 +180,5 @@ public class Formulario extends JFrame {
 	public static String getRegistrarcliente() {
 		return Registrarcliente;
 	}
+	
 }

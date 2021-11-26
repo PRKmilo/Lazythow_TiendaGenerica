@@ -27,6 +27,8 @@ public class Formulario2 extends JFrame {
 	private JTextField txtNombreDelBanco;
 	private JTextField txtNumeroCuenta;
 	private JTextField txtNombreDelGErente;
+	private JButton btnRegistrarTienda1;
+	public static final String Registrartienda="registrar";
 
 	/**
 	 * Launch the application.
@@ -96,15 +98,12 @@ public class Formulario2 extends JFrame {
 		lblNewLabel_4.setBounds(254, 26, 214, 31);
 		Jframe.add(lblNewLabel_4);
 		
-		JButton btnRegistrarTienda = new JButton("Registrar Tienda");
-		btnRegistrarTienda.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnRegistrarTienda.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnRegistrarTienda.setBounds(272, 298, 171, 31);
-		Jframe.add(btnRegistrarTienda);
+		
+		btnRegistrarTienda1 = new JButton("Registrar Tienda");
+		btnRegistrarTienda1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnRegistrarTienda1.setBounds(272, 298, 171, 31);
+		btnRegistrarTienda1.setActionCommand(Registrartienda);
+		Jframe.add(btnRegistrarTienda1);
 		
 		txtCiudad = new JTextField();
 		txtCiudad.setBounds(506, 146, 96, 19);
@@ -151,4 +150,89 @@ public class Formulario2 extends JFrame {
 		lblNewLabel_8.setBounds(348, 239, 148, 13);
 		Jframe.add(lblNewLabel_8);
 	}
+
+	public JPanel getJframe() {
+		return Jframe;
+	}
+
+	public void setJframe(JPanel jframe) {
+		Jframe = jframe;
+	}
+
+	public JTextField getTxtNombreEmpresa() {
+		return txtNombreEmpresa;
+	}
+
+	public void setTxtNombreEmpresa(JTextField txtNombreEmpresa) {
+		this.txtNombreEmpresa = txtNombreEmpresa;
+	}
+
+	public JTextField getTxtNit() {
+		return txtNit;
+	}
+
+	public void setTxtNit(JTextField txtNit) {
+		this.txtNit = txtNit;
+	}
+
+	public JTextField getTxtTipoComercio() {
+		return txtTipoComercio;
+	}
+
+	public void setTxtTipoComercio(JTextField txtTipoComercio) {
+		this.txtTipoComercio = txtTipoComercio;
+	}
+
+	public JTextField getTxtCiudad() {
+		return txtCiudad;
+	}
+
+	public void setTxtCiudad(JTextField txtCiudad) {
+		this.txtCiudad = txtCiudad;
+	}
+
+	public JTextField getTxtValorIva() {
+		return txtValorIva;
+	}
+
+	public void setTxtValorIva(JTextField txtValorIva) {
+		this.txtValorIva = txtValorIva;
+	}
+
+	public JTextField getTxtNombreDelBanco() {
+		return txtNombreDelBanco;
+	}
+
+	public void setTxtNombreDelBanco(JTextField txtNombreDelBanco) {
+		this.txtNombreDelBanco = txtNombreDelBanco;
+	}
+
+	public JTextField getTxtNumeroCuenta() {
+		return txtNumeroCuenta;
+	}
+
+	public void setTxtNumeroCuenta(JTextField txtNumeroCuenta) {
+		this.txtNumeroCuenta = txtNumeroCuenta;
+	}
+
+	public JTextField getTxtNombreDelGErente() {
+		return txtNombreDelGErente;
+	}
+
+	public void setTxtNombreDelGErente(JTextField txtNombreDelGErente) {
+		this.txtNombreDelGErente = txtNombreDelGErente;
+	}
+
+	public JButton getBtnRegistrarTienda1() {
+		return btnRegistrarTienda1;
+	}
+
+	public void setBtnRegistrarTienda1(JButton btnRegistrarTienda1) {
+		this.btnRegistrarTienda1 = btnRegistrarTienda1;
+	}
+
+	public static String getRegistrartienda() {
+		return Registrartienda;
+	}
+	
 }
