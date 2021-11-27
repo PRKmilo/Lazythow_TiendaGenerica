@@ -24,6 +24,8 @@ public class FormularioProducto extends JFrame {
 	private JTextField txtNitDeProveedorDelProducto;
 	private JTextField txtPrecioCompra;
 	private JTextField textPrecioVenta;
+	private JButton btnRegistrarProducto;
+	public static final String registroproducto="registro";
 
 	/**
 	 * Launch the application.
@@ -83,12 +85,8 @@ public class FormularioProducto extends JFrame {
 		lblNewLabel_4.setBounds(251, 26, 133, 31);
 		Jframe.add(lblNewLabel_4);
 		
-		JButton btnRegistrarProducto = new JButton("Registrar Producto");
-		btnRegistrarProducto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+	    btnRegistrarProducto = new JButton("Registrar Producto");
+	    btnRegistrarProducto.setActionCommand(registroproducto);
 		btnRegistrarProducto.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRegistrarProducto.setBounds(237, 252, 171, 31);
 		Jframe.add(btnRegistrarProducto);
@@ -98,7 +96,7 @@ public class FormularioProducto extends JFrame {
 		Jframe.add(txtNitDeProveedorDelProducto);
 		txtNitDeProveedorDelProducto.setColumns(10);
 		
-		JLabel lblNewLabel_5 = new JLabel("NIT de proveedor del producto");
+		JLabel lblNewLabel_5 = new JLabel("Precio de compra");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_5.setBounds(10, 192, 237, 16);
 		Jframe.add(lblNewLabel_5);
@@ -108,7 +106,7 @@ public class FormularioProducto extends JFrame {
 		Jframe.add(txtPrecioCompra);
 		txtPrecioCompra.setColumns(10);
 		
-		JLabel lblNewLabel_7 = new JLabel("Precio de compra");
+		JLabel lblNewLabel_7 = new JLabel("NIT");
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_7.setBounds(376, 147, 203, 13);
 		Jframe.add(lblNewLabel_7);
@@ -118,4 +116,55 @@ public class FormularioProducto extends JFrame {
 		textPrecioVenta.setBounds(540, 105, 96, 19);
 		Jframe.add(textPrecioVenta);
 	}
+
+	public JTextField getTxtNombreProducto() {
+		return txtNombreProducto;
+	}
+
+	public void setTxtNombreProducto(JTextField txtNombreProducto) {
+		this.txtNombreProducto = txtNombreProducto;
+	}
+
+	public JTextField getTxtCodigoDeProducto() {
+		return txtCodigoDeProducto;
+	}
+
+	public void setTxtCodigoDeProducto(JTextField txtCodigoDeProducto) {
+		this.txtCodigoDeProducto = txtCodigoDeProducto;
+	}
+
+	public JTextField getTxtNitDeProveedorDelProducto() {
+		return txtNitDeProveedorDelProducto;
+	}
+
+	public void setTxtNitDeProveedorDelProducto(JTextField txtNitDeProveedorDelProducto) {
+		this.txtNitDeProveedorDelProducto = txtNitDeProveedorDelProducto;
+	}
+
+	public JTextField getTxtPrecioCompra() {
+		return txtPrecioCompra;
+	}
+
+	public void setTxtPrecioCompra(JTextField txtPrecioCompra) {
+		this.txtPrecioCompra = txtPrecioCompra;
+	}
+
+	
+
+	public JTextField getTextPrecioVenta() {
+		return textPrecioVenta;
+	}
+
+	public void setTextPrecioVenta(JTextField textPrecioVenta) {
+		this.textPrecioVenta = textPrecioVenta;
+	}
+
+	public JButton getBtnRegistrarProducto() {
+		return btnRegistrarProducto;
+	}
+
+	public void setBtnRegistrarProducto(JButton btnRegistrarProducto) {
+		this.btnRegistrarProducto = btnRegistrarProducto;
+	}
+	
 }
