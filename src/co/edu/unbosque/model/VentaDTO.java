@@ -4,18 +4,19 @@ import java.io.Serializable;
 
 public class VentaDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
-   private int IVA;
-   private int ValorTotalIva;
-   private int ValorTotalVenta;
+   private double IVA;
+   private double ValorTotalIva;
+   private double ValorTotalVenta;
    private int CodigoVenta;
-   private int CedulaCliente;
-   private int ValorVentaIva;
+   private String CedulaCliente;
+   private double ValorVentaIva;
    private int Cantidad;
-   private int CodigoProducto;
+   private String CodigoProducto;
+   private boolean pagado;
    
    
 
-public VentaDTO(int IVA, int ValorTotalIva,  int ValorTotalVenta, int CodigoVenta, int CedulaCliente,int ValorVentaIva,int Cantidad,int CodigoProducto) {
+public VentaDTO(double IVA, double ValorTotalIva,  double ValorTotalVenta, int CodigoVenta, String CedulaCliente,double ValorVentaIva,int Cantidad,String CodigoProducto,boolean pagado) {
 	super();
 	this.IVA = IVA;
 	this.ValorTotalIva = ValorTotalIva;
@@ -25,41 +26,42 @@ public VentaDTO(int IVA, int ValorTotalIva,  int ValorTotalVenta, int CodigoVent
 	this.ValorVentaIva =ValorVentaIva;
 	this.Cantidad = Cantidad;
 	this.CodigoProducto = CodigoProducto;
+	this.pagado=pagado;
 }
 
 
 
-public int getIVA() {
+public double getIVA() {
 	return IVA;
 }
 
 
 
-public void setIVA(int iVA) {
+public void setIVA(double iVA) {
 	IVA = iVA;
 }
 
 
 
-public int getValorTotalIva() {
+public double getValorTotalIva() {
 	return ValorTotalIva;
 }
 
 
 
-public void setValorTotalIva(int valorTotalIva) {
+public void setValorTotalIva(double valorTotalIva) {
 	ValorTotalIva = valorTotalIva;
 }
 
 
 
-public int getValorTotalVenta() {
+public double getValorTotalVenta() {
 	return ValorTotalVenta;
 }
 
 
 
-public void setValorTotalVenta(int valorTotalVenta) {
+public void setValorTotalVenta(double valorTotalVenta) {
 	ValorTotalVenta = valorTotalVenta;
 }
 
@@ -77,25 +79,25 @@ public void setCodigoVenta(int codigoVenta) {
 
 
 
-public int getCedulaCliente() {
+public String getCedulaCliente() {
 	return CedulaCliente;
 }
 
 
 
-public void setCedulaCliente(int cedulaCliente) {
+public void setCedulaCliente(String cedulaCliente) {
 	CedulaCliente = cedulaCliente;
 }
 
 
 
-public int getValorVentaIva() {
+public double getValorVentaIva() {
 	return ValorVentaIva;
 }
 
 
 
-public void setValorVentaIva(int valorVentaIva) {
+public void setValorVentaIva(double valorVentaIva) {
 	ValorVentaIva = valorVentaIva;
 }
 
@@ -113,14 +115,26 @@ public void setCantidad(int cantidad) {
 
 
 
-public int getCodigoProducto() {
+public String getCodigoProducto() {
 	return CodigoProducto;
 }
 
 
 
-public void setCodigoProducto(int codigoProducto) {
+public void setCodigoProducto(String codigoProducto) {
 	CodigoProducto = codigoProducto;
+}
+
+
+
+public boolean isPagado() {
+	return pagado;
+}
+
+
+
+public void setPagado(boolean pagado) {
+	this.pagado = pagado;
 }
 
 

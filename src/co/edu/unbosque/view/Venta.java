@@ -19,6 +19,12 @@ import java.awt.event.ActionEvent;
 public class Venta extends JFrame {
 
 	private JPanel contentPane;
+	private JButton btnEliminarVenta;
+	private JButton btnRegistrarVenta;
+	private JButton btnActualizarVenta;
+	public static final String Eliminar="eliminar";
+	public static final String Registrar="registrar";
+	public static final String Actualizar="actualizar";
 
 	/**
 	 * Launch the application.
@@ -55,23 +61,60 @@ public class Venta extends JFrame {
 		lblNewLabel_2.setBounds(120, 25, 247, 67);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnEliminarVenta = new JButton("Eliminar");
+	     btnEliminarVenta = new JButton("Eliminar");
+	     btnEliminarVenta.setActionCommand(Eliminar);
 		btnEliminarVenta.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEliminarVenta.setBounds(314, 135, 146, 55);
 		contentPane.add(btnEliminarVenta);
 		
-		JButton btnRegistrarVenta = new JButton("Registrar ");
-		btnRegistrarVenta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+	    btnRegistrarVenta = new JButton("Registrar ");
+		btnRegistrarVenta.setActionCommand(Registrar);
 		btnRegistrarVenta.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRegistrarVenta.setBounds(10, 135, 154, 55);
 		contentPane.add(btnRegistrarVenta);
 		
-		JButton btnActualizarVenta = new JButton("Actualizar");
+		btnActualizarVenta = new JButton("Actualizar");
+		btnActualizarVenta.setActionCommand(Actualizar);
 		btnActualizarVenta.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnActualizarVenta.setBounds(174, 135, 130, 55);
 		contentPane.add(btnActualizarVenta);
 	}
+	
+
+	public static String getEliminar() {
+		return Eliminar;
+	}
+
+	public static String getRegistrar() {
+		return Registrar;
+	}
+
+	public static String getActualizar() {
+		return Actualizar;
+	}
+
+	public JButton getBtnEliminarVenta() {
+		return btnEliminarVenta;
+	}
+
+	public void setBtnEliminarVenta(JButton btnEliminarVenta) {
+		this.btnEliminarVenta = btnEliminarVenta;
+	}
+
+	public JButton getBtnRegistrarVenta() {
+		return btnRegistrarVenta;
+	}
+
+	public void setBtnRegistrarVenta(JButton btnRegistrarVenta) {
+		this.btnRegistrarVenta = btnRegistrarVenta;
+	}
+
+	public JButton getBtnActualizarVenta() {
+		return btnActualizarVenta;
+	}
+
+	public void setBtnActualizarVenta(JButton btnActualizarVenta) {
+		this.btnActualizarVenta = btnActualizarVenta;
+	}
+	
 }

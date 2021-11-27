@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JList;
@@ -19,11 +22,17 @@ import java.awt.event.ActionEvent;
 public class FormularioVenta extends JFrame {
 
 	private JPanel Jframe;
-	private JTextField txtNombreProducto;
-	private JTextField txtCodigoDeProducto;
-	private JTextField txtNitDeProveedorDelProducto;
-	private JTextField txtPrecioCompra;
-	private JTextField textPrecioVenta;
+	private JTextField txtcodventa;
+	private JTextField txtcantidad;
+	private JTextField txtCcliente;
+	private JTextField txtCodproducto;
+	private JButton  btnRegistrarProducto;
+	public static final String RegistrarV="registrarv";
+	public static final String Pagar="pagar";
+	public static final String Totalizar="totalizar";
+	private JButton btnpagar;
+	private JButton btnTotalizar;
+
 
 	/**
 	 * Launch the application.
@@ -58,64 +67,140 @@ public class FormularioVenta extends JFrame {
 		lblNewLabel.setBounds(10, 97, 179, 31);
 		Jframe.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Cedula del cliente");
+		JLabel lblNewLabel_1 = new JLabel("Cantidad");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_1.setBounds(10, 138, 171, 31);
 		Jframe.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("Valor iva");
+		JLabel lblNewLabel_2 = new JLabel("Cod.producto");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_2.setBounds(376, 94, 133, 31);
 		Jframe.add(lblNewLabel_2);
 		
-		txtNombreProducto = new JTextField();
-		txtNombreProducto.setBounds(251, 102, 96, 19);
-		Jframe.add(txtNombreProducto);
-		txtNombreProducto.setColumns(10);
+		txtcodventa = new JTextField();
+		txtcodventa.setBounds(251, 99, 96, 19);
+		Jframe.add(txtcodventa);
+		txtcodventa.setColumns(10);
 		
-		txtCodigoDeProducto = new JTextField();
-		txtCodigoDeProducto.setBounds(251, 146, 96, 19);
-		Jframe.add(txtCodigoDeProducto);
-		txtCodigoDeProducto.setColumns(10);
+		txtcantidad = new JTextField();
+		txtcantidad.setBounds(251, 146, 96, 19);
+		Jframe.add(txtcantidad);
+		txtcantidad.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Venta");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel_4.setBounds(251, 26, 133, 31);
 		Jframe.add(lblNewLabel_4);
 		
-		JButton btnRegistrarProducto = new JButton("Registrar Venta");
-		btnRegistrarProducto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+	    btnRegistrarProducto = new JButton("Registrar Venta");
+		
 		btnRegistrarProducto.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnRegistrarProducto.setBounds(237, 252, 171, 31);
+		btnRegistrarProducto.setActionCommand(RegistrarV);
 		Jframe.add(btnRegistrarProducto);
 		
-		txtNitDeProveedorDelProducto = new JTextField();
-		txtNitDeProveedorDelProducto.setBounds(251, 193, 96, 19);
-		Jframe.add(txtNitDeProveedorDelProducto);
-		txtNitDeProveedorDelProducto.setColumns(10);
+		btnTotalizar=new JButton("Totalizar");
+		btnTotalizar.setActionCommand(Totalizar);
+		btnTotalizar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnTotalizar.setBounds(46, 254, 171, 31);
+		Jframe.add(btnTotalizar);
 		
-		JLabel lblNewLabel_5 = new JLabel("Valor total de venta");
+		btnpagar=new JButton("Pagar");
+		btnpagar.setActionCommand(Pagar);
+		btnpagar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnpagar.setBounds(468, 254, 171, 31);
+		Jframe.add(btnpagar);
+		
+		txtCcliente = new JTextField();
+		txtCcliente.setBounds(251, 193, 96, 19);
+		Jframe.add(txtCcliente);
+		txtCcliente.setColumns(10);
+		
+		JLabel lblNewLabel_5 = new JLabel("C.Cliente");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_5.setBounds(10, 192, 237, 16);
 		Jframe.add(lblNewLabel_5);
 		
-		txtPrecioCompra = new JTextField();
-		txtPrecioCompra.setBounds(540, 146, 96, 19);
-		Jframe.add(txtPrecioCompra);
-		txtPrecioCompra.setColumns(10);
 		
 		JLabel lblNewLabel_7 = new JLabel("Valor total m\u00E1s iva ");
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_7.setBounds(376, 147, 203, 13);
-		Jframe.add(lblNewLabel_7);
 		
-		textPrecioVenta = new JTextField();
-		textPrecioVenta.setColumns(10);
-		textPrecioVenta.setBounds(540, 97, 96, 19);
-		Jframe.add(textPrecioVenta);
+		
+		txtCodproducto = new JTextField();
+		txtCodproducto.setColumns(10);
+		txtCodproducto.setBounds(540, 98, 96, 19);
+		Jframe.add(txtCodproducto);
 	}
+	
+
+	public JButton getBtnpagar() {
+		return btnpagar;
+	}
+
+	public void setBtnpagar(JButton btnpagar) {
+		this.btnpagar = btnpagar;
+	}
+
+	public JButton getBtnTotalizar() {
+		return btnTotalizar;
+	}
+
+	public void setBtnTotalizar(JButton btnTotalizar) {
+		this.btnTotalizar = btnTotalizar;
+	}
+
+	public static String getPagar() {
+		return Pagar;
+	}
+
+	public static String getTotalizar() {
+		return Totalizar;
+	}
+
+	public JTextField getTxtcodventa() {
+		return txtcodventa;
+	}
+
+	public void setTxtcodventa(JTextField txtcodventa) {
+		this.txtcodventa = txtcodventa;
+	}
+
+	public JTextField getTxtcantidad() {
+		return txtcantidad;
+	}
+
+	public void setTxtcantidad(JTextField txtcantidad) {
+		this.txtcantidad = txtcantidad;
+	}
+
+	public JTextField getTxtCcliente() {
+		return txtCcliente;
+	}
+
+	public void setTxtCcliente(JTextField txtCcliente) {
+		this.txtCcliente = txtCcliente;
+	}
+
+	public JTextField getTxtCodproducto() {
+		return txtCodproducto;
+	}
+
+	public void setTxtCodproducto(JTextField txtCodproducto) {
+		this.txtCodproducto = txtCodproducto;
+	}
+
+	public JButton getBtnRegistrarProducto() {
+		return btnRegistrarProducto;
+	}
+
+	public void setBtnRegistrarProducto(JButton btnRegistrarProducto) {
+		this.btnRegistrarProducto = btnRegistrarProducto;
+	}
+
+	public static String getRegistrarv() {
+		return RegistrarV;
+	}
+	
+	
 }

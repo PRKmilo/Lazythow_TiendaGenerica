@@ -10,7 +10,6 @@ public class VentasDAO {
 	private VentaDTO VentaDto;
 	
 	public VentasDAO() {
-		VentaDto = new VentaDTO(0, 0, 0, 0, 0, 0, 0, 0);
 		NominaVenta = new ArrayList<VentaDTO>();
 		archivoVenta = new VentasFile();
 
