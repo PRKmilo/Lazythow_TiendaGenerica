@@ -36,6 +36,10 @@ public class Controller implements ActionListener{
 		gui.getVenta().getBtnEliminarVenta().addActionListener(oyenteaccionventa);
 		gui.getVenta().getBtnRegistrarVenta().addActionListener(oyenteaccionventa);
 		gui.getForm_v().getBtnRegistrarProducto().addActionListener(oyentedeventaformulario);
+		gui.getproducto().getBtnActualizarProducto().addActionListener(oyentedeacciondeporducto);
+		gui.getproducto().getBtnEliminarProducto().addActionListener(oyentedeacciondeporducto);
+		gui.getproducto().getBtnRegistrarProducto().addActionListener(oyentedeacciondeporducto);
+		gui.getForm_p().getBtnRegistrarProducto().addActionListener(oyenteregistroproducto);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -171,6 +175,45 @@ public class Controller implements ActionListener{
 				System.out.println("usted espicho totalizar");
 			}
 			
+		}
+		
+	};
+	ActionListener oyentedeacciondeporducto=new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getActionCommand().equals(gui.getproducto().Registrarproducto)) {
+				System.out.println("usted espicho registro de producto");
+				gui.getForm_p().setVisible(true);
+			}
+			if(e.getActionCommand().equals(gui.getproducto().Eliminarproducto)) {
+				System.out.println("usted espicho eliminar producto");
+			}
+			if(e.getActionCommand().equals(gui.getproducto().Actualizarproducto)) {
+				System.out.println("usted espicho actualizar");
+			}
+		}
+		
+	};
+	ActionListener oyenteregistroproducto= new ActionListener(){
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getActionCommand().equals(gui.getForm_p().registroproducto)) {
+				System.out.println("usted espicho registro de producto");
+				String codproducto=gui.getForm_p().getTxtCodigoDeProducto().getText();
+				String preciocompra=gui.getForm_p().getTxtNitDeProveedorDelProducto().getText();
+				String nombreproducto= gui.getForm_p().getTxtNombreProducto().getText();
+				String precioventa= gui.getForm_p().getTextPrecioVenta().getText();
+				String NIT=gui.getForm_p().getTxtPrecioCompra().getText();
+				System.out.println(codproducto+" este es el codigo del producto");
+				System.out.println(preciocompra+" este es ek preciocompra");
+				System.out.println(nombreproducto+" este es el nomrbe del producto");
+				System.out.println(precioventa+" este es el precio del producto");
+				System.out.println(NIT+" este es el nit ");
+			}
 		}
 		
 	};

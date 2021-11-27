@@ -19,7 +19,12 @@ import java.awt.event.ActionEvent;
 public class Producto extends JFrame {
 
 	private JPanel contentPane;
-
+	private JButton btnEliminarProducto;
+	private JButton btnRegistrarProducto;
+	private JButton btnActualizarProducto;
+	public  static final String Eliminarproducto="eliminarproducto";
+	public static final String Registrarproducto="registrarproducto";
+	public static final String Actualizarproducto="actualizarproducto";
 	/**
 	 * Launch the application.
 	 */
@@ -55,23 +60,60 @@ public class Producto extends JFrame {
 		lblNewLabel_2.setBounds(120, 25, 247, 67);
 		contentPane.add(lblNewLabel_2);
 		
-		JButton btnEliminarProducto = new JButton("Eliminar");
+		 btnEliminarProducto = new JButton("Eliminar");
+		 btnEliminarProducto.setActionCommand(Eliminarproducto);
 		btnEliminarProducto.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEliminarProducto.setBounds(314, 135, 146, 55);
 		contentPane.add(btnEliminarProducto);
 		
-		JButton btnRegistrarProducto = new JButton("Registrar ");
-		btnRegistrarProducto.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		 btnRegistrarProducto = new JButton("Registrar ");
+		 btnRegistrarProducto.setActionCommand(Registrarproducto);
 		btnRegistrarProducto.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnRegistrarProducto.setBounds(10, 135, 154, 55);
 		contentPane.add(btnRegistrarProducto);
 		
-		JButton btnActualizarProducto = new JButton("Actualizar");
+		btnActualizarProducto = new JButton("Actualizar");
+		btnActualizarProducto.setActionCommand(Actualizarproducto);
 		btnActualizarProducto.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnActualizarProducto.setBounds(174, 135, 130, 55);
 		contentPane.add(btnActualizarProducto);
 	}
+
+	public JButton getBtnEliminarProducto() {
+		return btnEliminarProducto;
+	}
+
+	public void setBtnEliminarProducto(JButton btnEliminarProducto) {
+		this.btnEliminarProducto = btnEliminarProducto;
+	}
+
+	public JButton getBtnRegistrarProducto() {
+		return btnRegistrarProducto;
+	}
+
+	public void setBtnRegistrarProducto(JButton btnRegistrarProducto) {
+		this.btnRegistrarProducto = btnRegistrarProducto;
+	}
+
+	public JButton getBtnActualizarProducto() {
+		return btnActualizarProducto;
+	}
+
+	public void setBtnActualizarProducto(JButton btnActualizarProducto) {
+		this.btnActualizarProducto = btnActualizarProducto;
+	}
+
+	public static String getEliminarproducto() {
+		return Eliminarproducto;
+	}
+
+	public static String getRegistrarproducto() {
+		return Registrarproducto;
+	}
+
+	public static String getActualizarproducto() {
+		return Actualizarproducto;
+	}
+	
+	
 }

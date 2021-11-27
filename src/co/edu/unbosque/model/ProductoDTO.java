@@ -10,12 +10,12 @@ public class ProductoDTO  implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private String nombreProducto;
-	private int codigo;
+	private String codigo;
 	private int PrecioVenta;
 	private int NIT;
 	private int PrecioCompra;
 		
-		public ProductoDTO(String nombreProducto, int codigo, int PrecioVenta, int NIT,int PrecioCompra) {
+		public ProductoDTO(String nombreProducto, String codigo, int PrecioVenta, int NIT,int PrecioCompra) {
 		// TODO Auto-generated constructor stub
 			this.nombreProducto= nombreProducto;
 			this.codigo =codigo;
@@ -32,11 +32,11 @@ public class ProductoDTO  implements Serializable{
 			this.nombreProducto = nombreProducto;
 		}
 
-		public int getCodigo() {
+		public String getCodigo() {
 			return codigo;
 		}
 
-		public void setCodigo(int codigo) {
+		public void setCodigo(String codigo) {
 			this.codigo = codigo;
 		}
 

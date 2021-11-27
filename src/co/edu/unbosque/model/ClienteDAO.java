@@ -112,6 +112,7 @@ public class ClienteDAO {
 		}
 		return respuesta;
 	}
+	
 
 	public ArrayList<ClienteDTO> getNominaCliente() {
 		return NominaCliente;

@@ -10,7 +10,7 @@ public class ProductosDAO {
 	private ProductoDTO productoDto;
 	
 	public ProductosDAO() {
-		productoDto = new ProductoDTO(null, 0, 0, 0, 0);
+		productoDto = new ProductoDTO(null, null, 0, 0, 0);
 		NominaProducto = new ArrayList<ProductoDTO>();
 		archivoVenta = new VentasFile();
 
