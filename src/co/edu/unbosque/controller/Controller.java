@@ -88,7 +88,7 @@ public class Controller implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			System.out.println("se espucho el oyente del cliente");
+			System.out.println("se espocho el oyente del cliente");
 			String cedula=gui.getForm_cliente().getTxtCedula().getText();
 			String nombre=gui.getForm_cliente().getTxtNombre().getText();
 			String direccion=gui.getForm_cliente().getTxtdireccion().getText();
