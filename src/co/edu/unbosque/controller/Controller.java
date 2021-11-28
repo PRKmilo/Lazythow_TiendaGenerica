@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 
 import co.edu.unbosque.model.ClienteDTO;
 import co.edu.unbosque.model.Fachada;
+import co.edu.unbosque.model.ProductoDTO;
 import co.edu.unbosque.view.Principal;
 import co.edu.unbosque.view.View;
 
@@ -199,6 +200,8 @@ public class Controller implements ActionListener{
 			}
 			if(e.getActionCommand().equals(gui.getproducto().Eliminarproducto)) {
 				System.out.println("usted espicho eliminar producto");
+				String codigo=JOptionPane.showInputDialog("ingrese el codigo del producto a eliminar");
+				
 			}
 			if(e.getActionCommand().equals(gui.getproducto().Actualizarproducto)) {
 				System.out.println("usted espicho actualizar");
@@ -214,15 +217,20 @@ public class Controller implements ActionListener{
 			if(e.getActionCommand().equals(gui.getForm_p().registroproducto)) {
 				System.out.println("usted espicho registro de producto");
 				String codproducto=gui.getForm_p().getTxtCodigoDeProducto().getText();
-				String preciocompra=gui.getForm_p().getTxtNitDeProveedorDelProducto().getText();
+				int preciocompra=Integer.parseInt(gui.getForm_p().getTxtNitDeProveedorDelProducto().getText());
 				String nombreproducto= gui.getForm_p().getTxtNombreProducto().getText();
-				String precioventa= gui.getForm_p().getTextPrecioVenta().getText();
-				String NIT=gui.getForm_p().getTxtPrecioCompra().getText();
+				int precioventa= Integer.parseInt(gui.getForm_p().getTextPrecioVenta().getText());
+				int NIT=Integer.parseInt(gui.getForm_p().getTxtPrecioCompra().getText());
 				System.out.println(codproducto+" este es el codigo del producto");
 				System.out.println(preciocompra+" este es ek preciocompra");
 				System.out.println(nombreproducto+" este es el nomrbe del producto");
 				System.out.println(precioventa+" este es el precio del producto");
 				System.out.println(NIT+" este es el nit ");
+				if(Fachada.getProductodao().existeproducto(codproducto)) {
+					JOptionPane.showMessageDialog(null, "ese codigo de producto ya existe");
+				}else {
+				ProductoDTO producto=new ProductoDTO(nombreproducto,codproducto,precioventa,NIT,preciocompra);
+				}
 			}
 		}
 		
