@@ -25,7 +25,7 @@ public class FormularioActualizacionCLiente extends JFrame {
 	private JTextField ttxtcorreoelectronic;
 	private JTextField txtdireccion;
 	private JTextField txttelefono;
-	private JButton btnRegistrarTienda;
+	private JButton btnactualizarcliente;
 	public static final String Registrarcliente="registrar";
 
 	/**
@@ -82,11 +82,11 @@ public class FormularioActualizacionCLiente extends JFrame {
 		lblNewLabel_4.setBounds(182, 27, 214, 31);
 		Jframe.add(lblNewLabel_4);
 		
-	    btnRegistrarTienda = new JButton("Actualizar cliente");
-		btnRegistrarTienda.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnRegistrarTienda.setBounds(174, 215, 171, 31);
-		btnRegistrarTienda.setActionCommand(Registrarcliente);
-		Jframe.add(btnRegistrarTienda);
+		btnactualizarcliente = new JButton("Actualizar cliente");
+		btnactualizarcliente.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnactualizarcliente.setBounds(174, 215, 171, 31);
+		btnactualizarcliente.setActionCommand(Registrarcliente);
+		Jframe.add(btnactualizarcliente);
 		
 		txtdireccion = new JTextField();
 		txtdireccion.setBounds(122, 136, 96, 19);
@@ -151,12 +151,14 @@ public class FormularioActualizacionCLiente extends JFrame {
 		this.txttelefono = txttelefono;
 	}
 
-	public JButton getBtnRegistrarTienda() {
-		return btnRegistrarTienda;
+	
+
+	public JButton getBtnactualizarcliente() {
+		return btnactualizarcliente;
 	}
 
-	public void setBtnRegistrarTienda(JButton btnRegistrarTienda) {
-		this.btnRegistrarTienda = btnRegistrarTienda;
+	public void setBtnactualizarcliente(JButton btnactualizarcliente) {
+		this.btnactualizarcliente = btnactualizarcliente;
 	}
 
 	public static String getRegistrarcliente() {

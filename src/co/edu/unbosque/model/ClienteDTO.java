@@ -5,11 +5,11 @@ public class ClienteDTO implements Serializable {
 	private String nombre;
 	private String cedula;
 	private String direccion;
-	private int telefono;
+	private String telefono;
 	private String correo;
 	//Este es el ID
 	
-	public ClienteDTO(String nombre, String cedula,String direccion,int telefono,String correo ) {
+	public ClienteDTO(String nombre, String cedula,String direccion,String telefono,String correo ) {
 		this.nombre = nombre;
 		this.cedula = cedula;
 		this.direccion = direccion;
@@ -53,13 +53,13 @@ public class ClienteDTO implements Serializable {
 
 
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
 
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 

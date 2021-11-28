@@ -11,7 +11,7 @@ public class ClienteDAO {
 	private int indice ;
 	
 	public ClienteDAO() {
-		ClienteDto = new ClienteDTO(null, null, null, 0, null);
+		ClienteDto = new ClienteDTO(null, null, null, null, null);
 		NominaCliente = new ArrayList<ClienteDTO>();
 		archivoVenta = new VentasFile();
 		indice=0;
@@ -32,7 +32,7 @@ public class ClienteDAO {
 		System.out.println(archivoVenta.escribirArchivocliente(NominaCliente)+ " este el mensaje si se guardo");
 	}
 	public ClienteDTO buscarcliente(String cedula) {
-		ClienteDTO clienteencontrado=new ClienteDTO(null,null,null,0,null);
+		ClienteDTO clienteencontrado=new ClienteDTO(null,null,null,null,null);
 		ArrayList<ClienteDTO> nomina1=new ArrayList<ClienteDTO>();
 		if(archivoVenta.leerArchivocliente() == null) {
 			nomina1=new ArrayList<ClienteDTO>();
