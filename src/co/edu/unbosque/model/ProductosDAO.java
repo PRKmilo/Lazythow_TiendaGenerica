@@ -75,6 +75,21 @@ public class ProductosDAO {
 		}
 		return respuesta;
 	}
+	public ProductoDTO buscarproducto(String codigo) {
+		ProductoDTO productoencontrado=new ProductoDTO(null,null,0,0,0);
+		ArrayList<ProductoDTO> nomina1=new ArrayList<ProductoDTO>();
+		if(archivoVenta.leerArchivoproducto() == null) {
+			nomina1=new ArrayList<ProductoDTO>();
+		}else {
+			nomina1= archivoVenta.leerArchivoproducto();
+		}
+		for(int x=0;x<nomina1.size();x++) {
+			if(nomina1.get(x).getCodigo().equals(codigo)) {
+				productoencontrado=nomina1.get(x);
+			}
+		}
+		return productoencontrado;
+	}
 	public ArrayList<ProductoDTO> getNominaNominaProducto() {
 		return NominaProducto;
 	}
