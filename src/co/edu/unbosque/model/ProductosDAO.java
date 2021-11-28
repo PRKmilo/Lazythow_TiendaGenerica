@@ -89,6 +89,7 @@ public class ProductosDAO {
 			}
 		}
 		return productoencontrado;
+		
 	}
 	public ArrayList<ProductoDTO> getNominaNominaProducto() {
 		return NominaProducto;
