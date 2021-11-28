@@ -14,6 +14,7 @@ public class Controller implements ActionListener{
 	private Fachada Fachada;
 	private Principal gui;
 	private String cedula1;
+	private String codproducto;
 	public Controller() {
 		Fachada=new Fachada();
 		gui=new Principal();
@@ -43,6 +44,7 @@ public class Controller implements ActionListener{
 		gui.getproducto().getBtnRegistrarProducto().addActionListener(oyentedeacciondeporducto);
 		gui.getForm_p().getBtnRegistrarProducto().addActionListener(oyenteregistroproducto);
 		gui.getFormactualizacioncliente().getBtnactualizarcliente().addActionListener(oyenteactualizarcliente);
+		gui.getFormularioactualizacionporducto().getBtnRegistrarProducto().addActionListener(oyenteactualizarproducto);
 		
 	}
 	@Override
@@ -201,10 +203,18 @@ public class Controller implements ActionListener{
 			if(e.getActionCommand().equals(gui.getproducto().Eliminarproducto)) {
 				System.out.println("usted espicho eliminar producto");
 				String codigo=JOptionPane.showInputDialog("ingrese el codigo del producto a eliminar");
-				
+				JOptionPane.showMessageDialog(null, Fachada.getProductodao().eliminarproducto(codigo));
 			}
 			if(e.getActionCommand().equals(gui.getproducto().Actualizarproducto)) {
 				System.out.println("usted espicho actualizar");
+				String codigo=JOptionPane.showInputDialog("ingrese el codigo del producto que desea actualizar");
+				codproducto=codigo;
+				if(Fachada.getProductodao().existeproducto(codigo)) {
+					
+					gui.getFormularioactualizacionporducto().setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "producto no encontrado");
+				}
 			}
 		}
 		
@@ -230,6 +240,8 @@ public class Controller implements ActionListener{
 					JOptionPane.showMessageDialog(null, "ese codigo de producto ya existe");
 				}else {
 				ProductoDTO producto=new ProductoDTO(nombreproducto,codproducto,precioventa,NIT,preciocompra);
+				Fachada.getProductodao().agregarProducto(producto);
+				JOptionPane.showMessageDialog(null, "creacion de objeto satisfactoria");
 				}
 			}
 		}
@@ -248,6 +260,23 @@ public class Controller implements ActionListener{
 			cliente.setCorreo(gui.getFormactualizacioncliente().getTtxtcorreoelectronic().getText());
 			JOptionPane.showMessageDialog(null, "se ingresaron y actulizaron los datos bien");
 		}
+	};
+	ActionListener oyenteactualizarproducto=new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("usted espicho registrar actualzion de producto");
+			ProductoDTO producto=Fachada.getProductodao().buscarproducto(codproducto);
+			producto.setNombreProducto(gui.getFormularioactualizacionporducto().getTxtNombreProducto().getText());
+			producto.setNIT(Integer.parseInt(gui.getFormularioactualizacionporducto().getTxtNitDeProveedorDelProducto().getText()));
+			producto.setPrecioCompra(Integer.parseInt(gui.getFormularioactualizacionporducto().getTxtPrecioCompra().getText()));
+			producto.setPrecioVenta(Integer.parseInt(gui.getFormularioactualizacionporducto().getTextPrecioVenta().getText()));
+			JOptionPane.showMessageDialog(null, "Actualizacion de producto sin ningun problema");
+			gui.getFormularioactualizacionporducto().setVisible(false);
+			
+		}
+		
 	};
 	
 }
