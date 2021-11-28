@@ -140,6 +140,7 @@ public class FormularioActualizarProducto extends JFrame {
 
 	public void setTxtPrecioCompra(JTextField txtPrecioCompra) {
 		this.txtPrecioCompra = txtPrecioCompra;
+		
 	}
 
 	
