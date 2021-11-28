@@ -28,6 +28,7 @@ public class Principal extends JFrame {
 	private FormularioVenta form_v;
 	private Venta venta;
 	private FormularioProducto form_p;
+	private FormularioActualizacionCLiente formactualizacioncliente;
 
 
 	private JPanel contentPane;
@@ -48,6 +49,7 @@ public class Principal extends JFrame {
 		form_v=new FormularioVenta();
 		venta=new Venta();
 		form_p=new FormularioProducto();
+		formactualizacioncliente=new FormularioActualizacionCLiente();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 521, 307);
 		contentPane = new JPanel();
@@ -97,6 +99,20 @@ public class Principal extends JFrame {
 	
 	
 	
+	public FormularioActualizacionCLiente getFormactualizacioncliente() {
+		return formactualizacioncliente;
+	}
+
+
+
+
+	public void setFormactualizacioncliente(FormularioActualizacionCLiente formactualizacioncliente) {
+		this.formactualizacioncliente = formactualizacioncliente;
+	}
+
+
+
+
 	public FormularioProducto getForm_p() {
 		return form_p;
 	}

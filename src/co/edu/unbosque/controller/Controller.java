@@ -12,6 +12,7 @@ import co.edu.unbosque.view.View;
 public class Controller implements ActionListener{
 	private Fachada Fachada;
 	private Principal gui;
+	private String cedula1;
 	public Controller() {
 		Fachada=new Fachada();
 		gui=new Principal();
@@ -40,6 +41,8 @@ public class Controller implements ActionListener{
 		gui.getproducto().getBtnEliminarProducto().addActionListener(oyentedeacciondeporducto);
 		gui.getproducto().getBtnRegistrarProducto().addActionListener(oyentedeacciondeporducto);
 		gui.getForm_p().getBtnRegistrarProducto().addActionListener(oyenteregistroproducto);
+		gui.getFormactualizacioncliente().getBtnactualizarcliente().addActionListener(oyenteactualizarcliente);
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -48,7 +51,7 @@ public class Controller implements ActionListener{
 		System.out.println("este es el get action command"+e.getActionCommand());
 		if(e.getActionCommand().equals(gui.Clientes)) {
 			System.out.println("usted espicho a clientes");
-			System.out.println(Fachada.getVentasfile().leerArchivocliente().size()+" este es el tam de el arraylist");
+
 			gui.getCliente().setVisible(true);
 	
 		}
@@ -80,6 +83,13 @@ public class Controller implements ActionListener{
 			System.out.println("se esta escuchando algo de cliente");
 			if(e.getActionCommand().equals(gui.getCliente().Actualizar)) {
 				System.out.println("usted espicho el actualizar");
+				String cedula=JOptionPane.showInputDialog(null, "ingrese la cedula de la persona a actualizar");
+				cedula1=cedula;
+				if(Fachada.getClientedao().existecliente(cedula)) {
+					gui.getFormactualizacioncliente().setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "la persona con la cedula ingresada no esta en base de datos");
+				}
 			}
 			if(e.getActionCommand().equals(gui.getCliente().Eliminar)) {
 				System.out.println("se espicho eliminar");
@@ -106,7 +116,7 @@ public class Controller implements ActionListener{
 			String cedula=gui.getForm_cliente().getTxtCedula().getText();
 			String nombre=gui.getForm_cliente().getTxtNombre().getText();
 			String direccion=gui.getForm_cliente().getTxtdireccion().getText();
-			int telefono=Integer.parseInt(gui.getForm_cliente().getTxttelefono().getText());
+			String telefono=gui.getForm_cliente().getTxttelefono().getText();
 			String correo=gui.getForm_cliente().getTtxtcorreoelectronic().getText();
 			if(Fachada.getClientedao().existecliente(cedula)) {
 				JOptionPane.showMessageDialog(null, " esa cedula ya existe ingrese otra cedula");
@@ -216,6 +226,20 @@ public class Controller implements ActionListener{
 			}
 		}
 		
+	};
+	ActionListener oyenteactualizarcliente=new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("usted espicho oyente de actualizacion de cliente");
+			ClienteDTO cliente=Fachada.getClientedao().buscarcliente(cedula1);
+			cliente.setDireccion(gui.getFormactualizacioncliente().getTxtdireccion().getText());
+			cliente.setNombre(gui.getFormactualizacioncliente().getTxtNombre().getText());
+			cliente.setTelefono(gui.getFormactualizacioncliente().getTxttelefono().getText());
+			cliente.setCorreo(gui.getFormactualizacioncliente().getTtxtcorreoelectronic().getText());
+			JOptionPane.showMessageDialog(null, "se ingresaron y actulizaron los datos bien");
+		}
 	};
 	
 }
