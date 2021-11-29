@@ -19,7 +19,7 @@ public class VentasDAO extends Recibo{
 	public void agregarProducto(VentaDTO Venta){
 		
 		ArrayList<VentaDTO> nomina1=new ArrayList<VentaDTO>();
-		if(archivoVenta.leerArchivocliente() == null) {
+		if(archivoVenta.leerArchivoVenta() == null) {
 			nomina1=new ArrayList<VentaDTO>();
 		}else {
 			 nomina1= archivoVenta.leerArchivoVenta();
@@ -39,6 +39,22 @@ public class VentasDAO extends Recibo{
 		}else {
 			 nomina1= archivoVenta.leerArchivoVenta();
 			 respuesta=nomina1.size();
+		}
+		return respuesta;
+	}
+	
+	public double devuelvetotaldeuda(String cedula) {
+		double  respuesta =0.0;
+		ArrayList<VentaDTO> nomina1=new ArrayList<VentaDTO>();
+		if(archivoVenta.leerArchivoVenta() == null) {
+			nomina1=new ArrayList<VentaDTO>();
+		}else {
+			 nomina1= archivoVenta.leerArchivoVenta();
+		}
+		for(int x=0;x<nomina1.size();x++) {
+			if(nomina1.get(x).getCedulaCliente().equals(cedula) && nomina1.get(x).isPagado()==false) {
+				respuesta+=nomina1.get(x).getValorTotalVenta();
+			}
 		}
 		return respuesta;
 	}
