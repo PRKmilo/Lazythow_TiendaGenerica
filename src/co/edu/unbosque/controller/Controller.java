@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import co.edu.unbosque.model.ClienteDTO;
 import co.edu.unbosque.model.Fachada;
 import co.edu.unbosque.model.ProductoDTO;
+import co.edu.unbosque.model.VentaDTO;
 import co.edu.unbosque.view.Principal;
 import co.edu.unbosque.view.View;
 
@@ -181,11 +182,13 @@ public class Controller implements ActionListener{
 				System.out.println(gui.getForm_v().getTxtCodproducto().getText()+" esta es el codigo del porducto");
 				System.out.println(gui.getForm_v().getTxtcodventa().getText()+" este es el codigo de la venta");
 				int cantidad=Integer.parseInt(gui.getForm_v().getTxtcantidad().getText());
+				System.out.println(cantidad+" esta es la cantidad");
 				String cedulacliente=gui.getForm_v().getTxtCcliente().getText();
 				String codigoproducto=gui.getForm_v().getTxtCodproducto().getText();
 				if(Fachada.getClientedao().existecliente(cedulacliente) && Fachada.getProductodao().existeproducto(codigoproducto)) {
 					ProductoDTO producto=Fachada.getProductodao().buscarproducto(codigoproducto);
 					int codventa=Fachada.getVentasdao().devuelvesize();
+					System.out.println(codventa+" este es el codventa");
 					double iva=Double.parseDouble(Fachada.getCP().getProperty("IVA"));
 					double cantidadpagarsiniva=Fachada.getVentasdao().cantidadsiniva2(cantidad, producto.getPrecioVenta());
 					double valortotaliva=Fachada.getVentasdao().totaliva2(cantidad);
@@ -195,15 +198,22 @@ public class Controller implements ActionListener{
 					System.out.println(cantidadpagarsiniva+" esta es la cantidad a pagar sin iva");
 					System.out.println(valortotaliva+" este es el valortotaliva");
 					System.out.println(saldoapagar+" este es el saldo a pagar");
+					VentaDTO Nuevaventa=new VentaDTO(iva,valortotaliva,saldoapagar,codventa,cedulacliente,cantidadpagarsiniva,cantidad,codigoproducto, false);
+					Fachada.getVentasdao().agregarProducto(Nuevaventa);
+					JOptionPane.showMessageDialog(null, "este es el nombre del producto "+producto.getNombreProducto()+"\n"+"saldo total de esta venta: "+saldoapagar+"cargado al usuario con cedula: "+cedulacliente+"\n"+"cantidad del producto: "+cantidad);
 				}
 				
 				
 			}
 			if(e.getActionCommand().equals(gui.getForm_v().Pagar)) {
 				System.out.println("usted espicho pagar venta");
+				
+				
 			}
 			if(e.getActionCommand().equals(gui.getForm_v().Totalizar)) {
 				System.out.println("usted espicho totalizar");
+				String cedula=JOptionPane.showInputDialog("ingrese la cedula del cliente que quiere ver deuda");
+				JOptionPane.showMessageDialog(null,"su deuda con nosotros es la suma de: "+ Fachada.getVentasdao().devuelvetotaldeuda(cedula));
 			}
 			
 		}
