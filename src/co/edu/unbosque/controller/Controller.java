@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.JOptionPane;
 
@@ -8,6 +9,7 @@ import co.edu.unbosque.model.ClienteDTO;
 import co.edu.unbosque.model.Fachada;
 import co.edu.unbosque.model.ProductoDTO;
 import co.edu.unbosque.model.VentaDTO;
+import co.edu.unbosque.model.crearpedf;
 import co.edu.unbosque.view.Principal;
 import co.edu.unbosque.view.View;
 
@@ -16,6 +18,7 @@ public class Controller implements ActionListener{
 	private Principal gui;
 	private String cedula1;
 	private String codproducto;
+
 	public Controller() {
 		Fachada=new Fachada();
 		gui=new Principal();
@@ -70,7 +73,8 @@ public class Controller implements ActionListener{
 		}
 		if(e.getActionCommand().equals(gui.Pdf)) {
 			System.out.println("usted espciho pdf");
-			
+			crearpedf generatePDFFileIText = new crearpedf();
+			generatePDFFileIText.createPDF(new File("./Data/plan6.pdf"));
 			
 		}
 		if (e.getActionCommand().equals(gui.Registro)) {
@@ -228,6 +232,7 @@ public class Controller implements ActionListener{
 			if(e.getActionCommand().equals(gui.getproducto().Registrarproducto)) {
 				System.out.println("usted espicho registro de producto");
 				gui.getForm_p().setVisible(true);
+				
 			}
 			if(e.getActionCommand().equals(gui.getproducto().Eliminarproducto)) {
 				System.out.println("usted espicho eliminar producto");
