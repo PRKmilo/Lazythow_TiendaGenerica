@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.JOptionPane;
 
@@ -8,6 +9,7 @@ import co.edu.unbosque.model.ClienteDTO;
 import co.edu.unbosque.model.Fachada;
 import co.edu.unbosque.model.ProductoDTO;
 import co.edu.unbosque.model.VentaDTO;
+import co.edu.unbosque.model.crearpdf;
 import co.edu.unbosque.view.Principal;
 import co.edu.unbosque.view.View;
 
@@ -70,7 +72,8 @@ public class Controller implements ActionListener{
 		}
 		if(e.getActionCommand().equals(gui.Pdf)) {
 			System.out.println("usted espciho pdf");
-			
+			crearpdf generatePDFFileIText = new crearpdf();
+			generatePDFFileIText.createPDF(new File("./Data/plan6.pdf"));
 			
 		}
 		if (e.getActionCommand().equals(gui.Registro)) {
