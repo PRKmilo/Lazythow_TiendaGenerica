@@ -180,6 +180,24 @@ public class Controller implements ActionListener{
 				System.out.println(gui.getForm_v().getTxtCcliente().getText()+" esta es la cedula del cliente");
 				System.out.println(gui.getForm_v().getTxtCodproducto().getText()+" esta es el codigo del porducto");
 				System.out.println(gui.getForm_v().getTxtcodventa().getText()+" este es el codigo de la venta");
+				int cantidad=Integer.parseInt(gui.getForm_v().getTxtcantidad().getText());
+				String cedulacliente=gui.getForm_v().getTxtCcliente().getText();
+				String codigoproducto=gui.getForm_v().getTxtCodproducto().getText();
+				if(Fachada.getClientedao().existecliente(cedulacliente) && Fachada.getProductodao().existeproducto(codigoproducto)) {
+					ProductoDTO producto=Fachada.getProductodao().buscarproducto(codigoproducto);
+					int codventa=Fachada.getVentasdao().devuelvesize();
+					double iva=Double.parseDouble(Fachada.getCP().getProperty("IVA"));
+					double cantidadpagarsiniva=Fachada.getVentasdao().cantidadsiniva2(cantidad, producto.getPrecioVenta());
+					double valortotaliva=Fachada.getVentasdao().totaliva2(cantidad);
+					double saldoapagar=Fachada.getVentasdao().saldototal2(cantidad, producto.getPrecioVenta());
+					System.out.println(codventa+" este es el codigo venta");
+					System.out.println(iva+" esta es la iva");
+					System.out.println(cantidadpagarsiniva+" esta es la cantidad a pagar sin iva");
+					System.out.println(valortotaliva+" este es el valortotaliva");
+					System.out.println(saldoapagar+" este es el saldo a pagar");
+				}
+				
+				
 			}
 			if(e.getActionCommand().equals(gui.getForm_v().Pagar)) {
 				System.out.println("usted espicho pagar venta");

@@ -62,7 +62,7 @@ public class FormularioVenta extends JFrame {
 		setContentPane(Jframe);
 		Jframe.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Codigo de venta ");
+		JLabel lblNewLabel = new JLabel("Codigo de producto ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel.setBounds(10, 97, 179, 31);
 		Jframe.add(lblNewLabel);
@@ -75,11 +75,11 @@ public class FormularioVenta extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("Cod.producto");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_2.setBounds(376, 94, 133, 31);
-		Jframe.add(lblNewLabel_2);
+		
 		
 		txtcodventa = new JTextField();
 		txtcodventa.setBounds(251, 99, 96, 19);
-		Jframe.add(txtcodventa);
+		
 		txtcodventa.setColumns(10);
 		
 		txtcantidad = new JTextField();
@@ -129,7 +129,7 @@ public class FormularioVenta extends JFrame {
 		
 		txtCodproducto = new JTextField();
 		txtCodproducto.setColumns(10);
-		txtCodproducto.setBounds(540, 98, 96, 19);
+		txtCodproducto.setBounds(251, 99, 96, 19);
 		Jframe.add(txtCodproducto);
 	}
 	

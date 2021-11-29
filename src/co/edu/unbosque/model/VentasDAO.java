@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import co.edu.unbosque.model.persistance.Configuration_Properties;
 import co.edu.unbosque.model.persistance.VentasFile;
 
-public class VentasDAO {
+public class VentasDAO extends Recibo{
 	private ArrayList<VentaDTO> NominaVenta;
 	private VentasFile archivoVenta;
 	private VentaDTO VentaDto;
@@ -29,23 +29,43 @@ public class VentasDAO {
 		archivoVenta.escribirArchivoNominaVentaenta(NominaVenta);
 		System.out.println(archivoVenta.escribirArchivoNominaVentaenta(NominaVenta)+ " este el mensaje si se guardo");
 	}
-
-	public double cantidadsiniva(int cantidad,double precio) {
-		double respuesta=cantidad*precio;
+	public int devuelvesize() {
+		 int respuesta=0;
+		ArrayList<VentaDTO> nomina1=new ArrayList<VentaDTO>();
+		System.out.println("estaoy pasando por aqui");
+		if(archivoVenta.leerArchivoVenta() == null) {
+			System.out.println("esta pasando ahora por aqui");
+			respuesta=0;
+		}else {
+			 nomina1= archivoVenta.leerArchivoVenta();
+			 respuesta=nomina1.size();
+		}
 		return respuesta;
 	}
-	public double totaliva(int cantidad) {
-		double respuesta=cantidad*Double.parseDouble(propempresa.getProperty("iva"));
-		return respuesta;
-	}
-	public double saldotatal(int cantidad,double precio) {
-		return cantidadsiniva(cantidad,precio)+totaliva(cantidad);
-	}
+	
 	public ArrayList<VentaDTO> getNominaNominaVenta() {
 		return NominaVenta;
 	}
 
 	public void setNominaVenta(ArrayList<VentaDTO> NominaProducto) {
 		this.NominaVenta = NominaProducto;
+	}
+	@Override
+	public
+	double cantidadsiniva2(int cantidad,double precio) {
+		// TODO Auto-generated method stub
+		 return cantidad*precio;
+	}
+	@Override
+	public
+	double totaliva2(int cantidad) {
+		// TODO Auto-generated method stub
+		return cantidad*Double.parseDouble(propempresa.getProperty("IVA"));
+	}
+	@Override
+	public
+	double saldototal2(int cantidad,double precio) {
+		// TODO Auto-generated method stub
+		return cantidadsiniva2(cantidad,precio)+totaliva2(cantidad);
 	}
 }
