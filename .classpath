@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/barcodes-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/barcodes-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/barcodes-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/font-asian-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/forms-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/forms-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/forms-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/hyph-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/io-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/io-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/io-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/itextpdf-5.5.13.2.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/itextpdf-5.5.13.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/itextpdf-5.5.13.2-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/kernel-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/kernel-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/kernel-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/layout-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/layout-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/layout-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/pdfa-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/pdfa-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/pdfa-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/pdftest-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/pdftest-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/pdftest-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/sign-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/sign-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/sign-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/styled-xml-parser-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/styled-xml-parser-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/styled-xml-parser-7.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/svg-7.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/svg-7.1.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Users/ASUS/Documents/libreriaspdf/svg-7.1.3-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
