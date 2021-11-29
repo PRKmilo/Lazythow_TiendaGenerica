@@ -84,5 +84,4 @@ public class VentasDAO extends Recibo{
 		// TODO Auto-generated method stub
 		return cantidadsiniva2(cantidad,precio)+totaliva2(cantidad);
 	}
-	
 }
