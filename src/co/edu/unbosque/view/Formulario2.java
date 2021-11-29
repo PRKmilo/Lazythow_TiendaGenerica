@@ -149,6 +149,11 @@ public class Formulario2 extends JFrame {
 		lblNewLabel_8.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_8.setBounds(348, 239, 148, 13);
 		Jframe.add(lblNewLabel_8);
+		
+		JButton btnNewButton = new JButton("Regresar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton.setBounds(10, 315, 107, 31);
+		Jframe.add(btnNewButton);
 	}
 
 	public JPanel getJframe() {
@@ -234,5 +239,4 @@ public class Formulario2 extends JFrame {
 	public static String getRegistrartienda() {
 		return Registrartienda;
 	}
-	
 }
