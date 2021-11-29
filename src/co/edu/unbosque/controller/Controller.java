@@ -46,6 +46,7 @@ public class Controller implements ActionListener{
 		gui.getForm_p().getBtnRegistrarProducto().addActionListener(oyenteregistroproducto);
 		gui.getFormactualizacioncliente().getBtnactualizarcliente().addActionListener(oyenteactualizarcliente);
 		gui.getFormularioactualizacionporducto().getBtnRegistrarProducto().addActionListener(oyenteactualizarproducto);
+		gui.getForm_v().getBtnTotalizar().addActionListener(oyentedeventaformulario);
 		
 	}
 	@Override
@@ -200,7 +201,7 @@ public class Controller implements ActionListener{
 					System.out.println(saldoapagar+" este es el saldo a pagar");
 					VentaDTO Nuevaventa=new VentaDTO(iva,valortotaliva,saldoapagar,codventa,cedulacliente,cantidadpagarsiniva,cantidad,codigoproducto, false);
 					Fachada.getVentasdao().agregarProducto(Nuevaventa);
-					JOptionPane.showMessageDialog(null, "este es el nombre del producto "+producto.getNombreProducto()+"\n"+"saldo total de esta venta: "+saldoapagar+"cargado al usuario con cedula: "+cedulacliente+"\n"+"cantidad del producto: "+cantidad);
+					JOptionPane.showMessageDialog(null, "este es el nombre del producto: "+producto.getNombreProducto()+"\n"+"saldo total de esta venta: "+saldoapagar+"\n"+"cargado al usuario con cedula: "+cedulacliente+"\n"+"cantidad del producto: "+cantidad);
 				}
 				
 				
