@@ -25,6 +25,7 @@ public class Venta extends JFrame {
 	public static final String Eliminar="eliminar";
 	public static final String Registrar="registrar";
 	public static final String Actualizar="actualizar";
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -47,7 +48,7 @@ public class Venta extends JFrame {
 	 */
 	public Venta() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 485, 277);
+		setBounds(100, 100, 482, 303);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLUE);
 		contentPane.setForeground(Color.BLACK);
@@ -78,6 +79,11 @@ public class Venta extends JFrame {
 		btnActualizarVenta.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnActualizarVenta.setBounds(174, 135, 130, 55);
 		contentPane.add(btnActualizarVenta);
+		
+		btnNewButton = new JButton("Regresar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton.setBounds(0, 227, 99, 29);
+		contentPane.add(btnNewButton);
 	}
 	
 

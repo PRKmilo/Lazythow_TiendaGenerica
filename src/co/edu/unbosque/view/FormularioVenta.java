@@ -32,6 +32,7 @@ public class FormularioVenta extends JFrame {
 	public static final String Totalizar="totalizar";
 	private JButton btnpagar;
 	private JButton btnTotalizar;
+	private JButton btnNewButton;
 
 
 	/**
@@ -64,12 +65,12 @@ public class FormularioVenta extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Codigo de producto ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel.setBounds(10, 97, 179, 31);
+		lblNewLabel.setBounds(46, 97, 179, 31);
 		Jframe.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Cantidad");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_1.setBounds(10, 138, 171, 31);
+		lblNewLabel_1.setBounds(46, 138, 171, 31);
 		Jframe.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Cod.producto");
@@ -83,7 +84,7 @@ public class FormularioVenta extends JFrame {
 		txtcodventa.setColumns(10);
 		
 		txtcantidad = new JTextField();
-		txtcantidad.setBounds(251, 146, 96, 19);
+		txtcantidad.setBounds(243, 146, 96, 19);
 		Jframe.add(txtcantidad);
 		txtcantidad.setColumns(10);
 		
@@ -95,30 +96,30 @@ public class FormularioVenta extends JFrame {
 	    btnRegistrarProducto = new JButton("Registrar Venta");
 		
 		btnRegistrarProducto.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnRegistrarProducto.setBounds(237, 252, 171, 31);
+		btnRegistrarProducto.setBounds(251, 239, 171, 31);
 		btnRegistrarProducto.setActionCommand(RegistrarV);
 		Jframe.add(btnRegistrarProducto);
 		
 		btnTotalizar=new JButton("Totalizar");
 		btnTotalizar.setActionCommand(Totalizar);
 		btnTotalizar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnTotalizar.setBounds(46, 254, 171, 31);
+		btnTotalizar.setBounds(46, 239, 171, 31);
 		Jframe.add(btnTotalizar);
 		
 		btnpagar=new JButton("Pagar");
 		btnpagar.setActionCommand(Pagar);
 		btnpagar.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnpagar.setBounds(468, 254, 171, 31);
+		btnpagar.setBounds(452, 239, 155, 31);
 		Jframe.add(btnpagar);
 		
 		txtCcliente = new JTextField();
-		txtCcliente.setBounds(251, 193, 96, 19);
+		txtCcliente.setBounds(243, 193, 96, 19);
 		Jframe.add(txtCcliente);
 		txtCcliente.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("C.Cliente");
 		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblNewLabel_5.setBounds(10, 192, 237, 16);
+		lblNewLabel_5.setBounds(46, 192, 237, 16);
 		Jframe.add(lblNewLabel_5);
 		
 		
@@ -129,8 +130,13 @@ public class FormularioVenta extends JFrame {
 		
 		txtCodproducto = new JTextField();
 		txtCodproducto.setColumns(10);
-		txtCodproducto.setBounds(251, 99, 96, 19);
+		txtCodproducto.setBounds(243, 105, 96, 19);
 		Jframe.add(txtCodproducto);
+		
+		btnNewButton = new JButton("Regresar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton.setBounds(10, 297, 112, 31);
+		Jframe.add(btnNewButton);
 	}
 	
 

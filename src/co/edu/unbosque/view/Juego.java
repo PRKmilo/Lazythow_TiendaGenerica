@@ -25,6 +25,7 @@ public class Juego extends JFrame {
 	public static final String Eliminar="eliminar";
 	public static final String Actualizar="actualizar";
 	public static final String Registrar="registrar";
+	private JButton btnNewButton_3;
 
 	
 
@@ -49,7 +50,7 @@ public class Juego extends JFrame {
 	 */
 	public Juego() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 485, 277);
+		setBounds(100, 100, 486, 305);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLUE);
 		contentPane.setForeground(Color.BLACK);
@@ -80,6 +81,11 @@ public class Juego extends JFrame {
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_2.setBounds(146, 135, 148, 55);
 		contentPane.add(btnNewButton_2);
+		
+		btnNewButton_3 = new JButton("Regresar");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton_3.setBounds(0, 233, 99, 25);
+		contentPane.add(btnNewButton_3);
 	}
 	
 	public static String getEliminar() {

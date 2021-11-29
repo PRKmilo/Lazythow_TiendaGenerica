@@ -27,6 +27,7 @@ public class FormularioActualizacionCLiente extends JFrame {
 	private JTextField txttelefono;
 	private JButton btnactualizarcliente;
 	public static final String Registrarcliente="registrar";
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -84,7 +85,7 @@ public class FormularioActualizacionCLiente extends JFrame {
 		
 		btnactualizarcliente = new JButton("Actualizar cliente");
 		btnactualizarcliente.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnactualizarcliente.setBounds(174, 215, 171, 31);
+		btnactualizarcliente.setBounds(199, 215, 171, 31);
 		btnactualizarcliente.setActionCommand(Registrarcliente);
 		Jframe.add(btnactualizarcliente);
 		
@@ -107,6 +108,11 @@ public class FormularioActualizacionCLiente extends JFrame {
 		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_7.setBounds(281, 142, 150, 13);
 		Jframe.add(lblNewLabel_7);
+		
+		btnNewButton = new JButton("regresar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton.setBounds(10, 215, 105, 31);
+		Jframe.add(btnNewButton);
 	}
 
 	public JPanel getJframe() {

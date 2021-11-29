@@ -27,6 +27,7 @@ public class FormularioActualizarProducto extends JFrame {
 	private JTextField textPrecioVenta;
 	private JButton btnRegistrarProducto;
 	public static final String registroproducto="registro";
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -108,6 +109,11 @@ public class FormularioActualizarProducto extends JFrame {
 		textPrecioVenta.setColumns(10);
 		textPrecioVenta.setBounds(540, 105, 96, 19);
 		Jframe.add(textPrecioVenta);
+		
+		btnNewButton = new JButton("Regresar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton.setBounds(10, 297, 117, 31);
+		Jframe.add(btnNewButton);
 	}
 
 	public JTextField getTxtNombreProducto() {

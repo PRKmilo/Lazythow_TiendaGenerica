@@ -45,6 +45,11 @@ public class Principal extends JFrame {
 		cliente=new Juego();
 		producto=new Producto();
 		registro2=new Formulario2();
+		
+		JButton btnNewButton_2 = new JButton("Regresar");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton_2.setBounds(10, 312, 99, 34);
+		registro2.getContentPane().add(btnNewButton_2);
 		form_cliente=new Formulario();
 		form_v=new FormularioVenta();
 		venta=new Venta();

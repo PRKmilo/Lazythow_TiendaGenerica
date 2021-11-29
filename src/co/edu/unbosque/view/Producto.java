@@ -25,6 +25,7 @@ public class Producto extends JFrame {
 	public  static final String Eliminarproducto="eliminarproducto";
 	public static final String Registrarproducto="registrarproducto";
 	public static final String Actualizarproducto="actualizarproducto";
+	private JButton btnNewButton;
 	/**
 	 * Launch the application.
 	 */
@@ -46,7 +47,7 @@ public class Producto extends JFrame {
 	 */
 	public Producto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 485, 277);
+		setBounds(100, 100, 493, 314);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLUE);
 		contentPane.setForeground(Color.BLACK);
@@ -77,6 +78,11 @@ public class Producto extends JFrame {
 		btnActualizarProducto.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnActualizarProducto.setBounds(174, 135, 130, 55);
 		contentPane.add(btnActualizarProducto);
+		
+		btnNewButton = new JButton("Regresar");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnNewButton.setBounds(0, 242, 99, 25);
+		contentPane.add(btnNewButton);
 	}
 
 	public JButton getBtnEliminarProducto() {
