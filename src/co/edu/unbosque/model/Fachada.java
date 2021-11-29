@@ -9,14 +9,26 @@ public class Fachada {
 	private ClienteDTO clientedto;
 	private VentasFile ventasfile;
 	private ProductosDAO productodao;
+	private VentasDAO ventasdao;
 	public Fachada() {
 		CP=new Configuration_Properties();
 		clientedao=new ClienteDAO();
 		ventasfile=new VentasFile();
 		productodao=new ProductosDAO();
+		ventasdao =new VentasDAO();
 	}
 	
 	
+	public VentasDAO getVentasdao() {
+		return ventasdao;
+	}
+
+
+	public void setVentasdao(VentasDAO ventasdao) {
+		this.ventasdao = ventasdao;
+	}
+
+
 	public ProductosDAO getProductodao() {
 		return productodao;
 	}
