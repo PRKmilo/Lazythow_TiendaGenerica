@@ -10,9 +10,7 @@ public class Fachada {
 	private VentasFile ventasfile;
 	private ProductosDAO productodao;
 	private VentasDAO ventasdao;
-	private crearpedf pdf;
 	public Fachada() {
-		pdf =new crearpedf();
 		CP=new Configuration_Properties();
 		clientedao=new ClienteDAO();
 		ventasfile=new VentasFile();
@@ -64,16 +62,6 @@ public class Fachada {
 	}
 	public void setCP(Configuration_Properties cP) {
 		CP = cP;
-	}
-
-
-	public crearpedf getPdf() {
-		return pdf;
-	}
-
-
-	public void setPdf(crearpedf pdf) {
-		this.pdf = pdf;
 	}
 	
 }
