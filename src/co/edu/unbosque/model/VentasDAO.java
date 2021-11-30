@@ -75,6 +75,23 @@ public class VentasDAO extends Recibo{
 		archivoVenta.escribirArchivoNominaVentaenta(nomina1);
 		return respuesta;
 	}
+	public String cancelarproductos(String cedula) {
+		String respuesta="se han pagado los productos en deuda";
+		ArrayList<VentaDTO> nomina1=new ArrayList<VentaDTO>();
+		if(archivoVenta.leerArchivocliente() == null) {
+			nomina1=new ArrayList<VentaDTO>();
+		}else {
+			 nomina1 = archivoVenta.leerArchivoVenta();
+		}
+		for(int x=0;x<nomina1.size();x++) {
+			if(nomina1.get(x).getCedulaCliente().equals(cedula) && nomina1.get(x).isPagado()==false) {
+				nomina1.get(x).setPagado(true);
+			}
+		}
+		archivoVenta.escribirArchivoNominaVentaenta(nomina1);
+		
+		return respuesta;
+	}
 	public ArrayList<VentaDTO> getNominaNominaVenta() {
 		return NominaVenta;
 	}
