@@ -49,6 +49,7 @@ public class Controller implements ActionListener{
 		gui.getFormactualizacioncliente().getBtnactualizarcliente().addActionListener(oyenteactualizarcliente);
 		gui.getFormularioactualizacionporducto().getBtnRegistrarProducto().addActionListener(oyenteactualizarproducto);
 		gui.getForm_v().getBtnTotalizar().addActionListener(oyentedeventaformulario);
+		gui.getForm_v().getBtnpagar().addActionListener(oyentedeventaformulario);
 		
 	}
 	@Override
@@ -211,7 +212,8 @@ public class Controller implements ActionListener{
 			}
 			if(e.getActionCommand().equals(gui.getForm_v().Pagar)) {
 				System.out.println("usted espicho pagar venta");
-				
+				String cedulacliente=JOptionPane.showInputDialog("ingrese la cedula para confirmar pago");
+				JOptionPane.showMessageDialog(null,Fachada.getVentasdao().cancelarproductos(cedulacliente));
 				
 			}
 			if(e.getActionCommand().equals(gui.getForm_v().Totalizar)) {
