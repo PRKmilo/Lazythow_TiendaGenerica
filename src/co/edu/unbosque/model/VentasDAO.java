@@ -92,9 +92,8 @@ public class VentasDAO extends Recibo{
 		
 		return respuesta;
 	}
-	public String ventatotalporcliente(String cedula) {
-		String respuesta="";
-		double contador=0.0;
+	public double ventatotalporcliente(String cedula) {
+		double respuesta=0.0;
 		ArrayList<VentaDTO> nomina1=new ArrayList<VentaDTO>();
 		if(archivoVenta.leerArchivocliente() == null) {
 			nomina1=new ArrayList<VentaDTO>();
@@ -103,10 +102,9 @@ public class VentasDAO extends Recibo{
 		}
 		for(int x=0;x<nomina1.size();x++) {
 			if(nomina1.get(x).getCedulaCliente().equals(cedula)) {
-				contador+=nomina1.get(x).getValorTotalVenta();
+				respuesta+=nomina1.get(x).getValorTotalVenta();
 			}
 		}
-		respuesta=String.valueOf(contador);
 		return respuesta;
 	}
 	public String devuelvedetallerventa(String cedula) {
