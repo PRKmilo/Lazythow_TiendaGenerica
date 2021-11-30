@@ -26,6 +26,7 @@ public class Producto extends JFrame {
 	public static final String Registrarproducto="registrarproducto";
 	public static final String Actualizarproducto="actualizarproducto";
 	private JButton btnNewButton;
+	public static final String Regreso="regreso";
 	/**
 	 * Launch the application.
 	 */
@@ -80,9 +81,22 @@ public class Producto extends JFrame {
 		contentPane.add(btnActualizarProducto);
 		
 		btnNewButton = new JButton("Regresar");
+		btnActualizarProducto.setActionCommand(Regreso);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBounds(0, 242, 99, 25);
 		contentPane.add(btnNewButton);
+	}
+	
+	public static String getRegreso() {
+		return Regreso;
+	}
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+
+	public void setBtnNewButton(JButton btnNewButton) {
+		this.btnNewButton = btnNewButton;
 	}
 
 	public JButton getBtnEliminarProducto() {

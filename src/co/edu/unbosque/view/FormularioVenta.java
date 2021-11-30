@@ -33,6 +33,7 @@ public class FormularioVenta extends JFrame {
 	private JButton btnpagar;
 	private JButton btnTotalizar;
 	private JButton btnNewButton;
+	public static final String Registrar="registrar";
 
 
 	/**
@@ -134,11 +135,24 @@ public class FormularioVenta extends JFrame {
 		Jframe.add(txtCodproducto);
 		
 		btnNewButton = new JButton("Regresar");
+		btnNewButton.setActionCommand(Registrar);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBounds(10, 297, 112, 31);
 		Jframe.add(btnNewButton);
 	}
 	
+	
+	public static String getRegistrar() {
+		return Registrar;
+	}
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+
+	public void setBtnNewButton(JButton btnNewButton) {
+		this.btnNewButton = btnNewButton;
+	}
 
 	public JButton getBtnpagar() {
 		return btnpagar;
