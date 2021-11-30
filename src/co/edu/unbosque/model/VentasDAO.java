@@ -89,8 +89,7 @@ public class VentasDAO extends Recibo{
 		 return cantidad*precio;
 	}
 	@Override
-	public
-	double totaliva2(int cantidad) {
+	public double totaliva2(int cantidad) {
 		// TODO Auto-generated method stub
 		return cantidad*Double.parseDouble(propempresa.getProperty("IVA"));
 	}
