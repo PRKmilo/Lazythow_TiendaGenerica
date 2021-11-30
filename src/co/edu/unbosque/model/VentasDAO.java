@@ -92,6 +92,36 @@ public class VentasDAO extends Recibo{
 		
 		return respuesta;
 	}
+	public double ventatotalporcliente(String cedula) {
+		double respuesta=0.0;
+		ArrayList<VentaDTO> nomina1=new ArrayList<VentaDTO>();
+		if(archivoVenta.leerArchivocliente() == null) {
+			nomina1=new ArrayList<VentaDTO>();
+		}else {
+			 nomina1 = archivoVenta.leerArchivoVenta();
+		}
+		for(int x=0;x<nomina1.size();x++) {
+			if(nomina1.get(x).getCedulaCliente().equals(cedula)) {
+				respuesta+=nomina1.get(x).getValorTotalVenta();
+			}
+		}
+		return respuesta;
+	}
+	public String devuelvedetallerventa(String cedula) {
+		String respuesta="";
+		ArrayList<VentaDTO> nomina1=new ArrayList<VentaDTO>();
+		if(archivoVenta.leerArchivocliente() == null) {
+			nomina1=new ArrayList<VentaDTO>();
+		}else {
+			 nomina1 = archivoVenta.leerArchivoVenta();
+		}
+		for(int x=0;x<nomina1.size();x++) {
+			if(nomina1.get(x).getCedulaCliente().equals(cedula)) {
+				respuesta="este es el codigo del produto comprado:"+nomina1.get(x).getCodigoProducto()+"\n"+"esta es la cantidad de la venta: "+nomina1.get(x).getCantidad()+"\n"+"este fue el valor que se pagaba: "+nomina1.get(x).getValorTotalVenta();
+			}
+		}
+		return respuesta;
+	}
 	public ArrayList<VentaDTO> getNominaNominaVenta() {
 		return NominaVenta;
 	}
