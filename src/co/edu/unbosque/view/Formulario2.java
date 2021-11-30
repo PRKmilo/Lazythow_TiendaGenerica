@@ -28,6 +28,8 @@ public class Formulario2 extends JFrame {
 	private JTextField txtNumeroCuenta;
 	private JTextField txtNombreDelGErente;
 	private JButton btnRegistrarTienda1;
+	private JButton btnNewButton;
+	public static final String Regreso="regreso";
 	public static final String Registrartienda="registrar";
 
 	/**
@@ -150,10 +152,23 @@ public class Formulario2 extends JFrame {
 		lblNewLabel_8.setBounds(348, 239, 148, 13);
 		Jframe.add(lblNewLabel_8);
 		
-		JButton btnNewButton = new JButton("Regresar");
+	    btnNewButton = new JButton("Regresar");
+	    btnNewButton.setActionCommand(Regreso);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBounds(10, 315, 107, 31);
 		Jframe.add(btnNewButton);
+	}
+	
+	public static String getRegreso() {
+		return Regreso;
+	}
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+
+	public void setBtnNewButton(JButton btnNewButton) {
+		this.btnNewButton = btnNewButton;
 	}
 
 	public JPanel getJframe() {

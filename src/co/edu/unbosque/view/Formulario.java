@@ -28,6 +28,16 @@ public class Formulario extends JFrame {
 	private JButton btnRegistrarTienda;
 	public static final String Registrarcliente="registrar";
 	private JButton btnNewButton;
+	public static final String Regreso="regreso";
+
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+
+	public void setBtnNewButton(JButton btnNewButton) {
+		this.btnNewButton = btnNewButton;
+	}
 
 	/**
 	 * Launch the application.
@@ -120,9 +130,14 @@ public class Formulario extends JFrame {
 		Jframe.add(lblNewLabel_7);
 		
 		btnNewButton = new JButton("Regresar");
+		btnNewButton.setActionCommand(Regreso);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnNewButton.setBounds(10, 315, 96, 31);
 		Jframe.add(btnNewButton);
+	}
+	
+	public static String getRegreso() {
+		return Regreso;
 	}
 
 	public JPanel getJframe() {

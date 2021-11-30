@@ -50,6 +50,12 @@ public class Controller implements ActionListener{
 		gui.getFormularioactualizacionporducto().getBtnRegistrarProducto().addActionListener(oyenteactualizarproducto);
 		gui.getForm_v().getBtnTotalizar().addActionListener(oyentedeventaformulario);
 		gui.getForm_v().getBtnpagar().addActionListener(oyentedeventaformulario);
+		gui.getForm_cliente().getBtnNewButton().addActionListener(oyendederegresoformulariocliente);
+		gui.getForm_p().getBtnNewButton().addActionListener(oyenteregresoformularioproducto);
+		gui.getForm_v().getBtnNewButton().addActionListener(oyenteregresoformularioventa);
+		gui.getproducto().getBtnNewButton().addActionListener(oyenteregresoaccionesproducto);
+		gui.getCliente().getBtnNewButton_3().addActionListener(oyenteregresoaccionescliente);
+		gui.getVenta().getBtnNewButton().addActionListener(oyenteregresoaccionesventa);
 		
 	}
 	@Override
@@ -312,5 +318,78 @@ public class Controller implements ActionListener{
 		}
 		
 	};
+	ActionListener oyendederegresoformulariocliente=new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getForm_cliente().setVisible(false);
+		}
+		
+	};
+	ActionListener oyenteregresoformulariotienda=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getregistro().setVisible(false);
+		}
+	};
 	
+	ActionListener oyenteregresoformularioActualizacioncliente=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getFormactualizacioncliente().setVisible(false);
+		}
+	};
+	ActionListener oyenteregresoformularioproducto=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getForm_p().setVisible(false);
+		}
+	};
+	ActionListener oyenteregresoformularioventa=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getForm_v().setVisible(false);
+		}
+	};
+	ActionListener oyenteregresoaccionescliente=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getCliente().setVisible(false);
+		}
+	};
+	
+	ActionListener oyenteregresoaccionesproducto=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getproducto().setVisible(false);
+		}
+	};
+	ActionListener oyenteregresoaccionesventa=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getVenta().setVisible(false);
+		}
+	};
+	ActionListener oyenteregresoactualizacionproducto=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getFormularioactualizacionporducto().setVisible(false);
+		}
+	};
+	ActionListener oyenteregresoactualizacionventa=new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			gui.getForm_v().setVisible(false);
+		}
+	};
 }

@@ -28,6 +28,8 @@ public class FormularioActualizacionCLiente extends JFrame {
 	private JButton btnactualizarcliente;
 	public static final String Registrarcliente="registrar";
 	private JButton btnNewButton;
+	public static final String Regreso="regreso";
+
 
 	/**
 	 * Launch the application.
@@ -110,17 +112,14 @@ public class FormularioActualizacionCLiente extends JFrame {
 		Jframe.add(lblNewLabel_7);
 		
 		btnNewButton = new JButton("regresar");
+		btnactualizarcliente.setActionCommand(Regreso);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBounds(10, 215, 105, 31);
 		Jframe.add(btnNewButton);
 	}
 
-	public JPanel getJframe() {
-		return Jframe;
-	}
-
-	public void setJframe(JPanel jframe) {
-		Jframe = jframe;
+	public JButton getbtnNewButton() {
+		return btnNewButton;
 	}
 
 	public JTextField getTxtNombre() {

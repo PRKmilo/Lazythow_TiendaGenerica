@@ -26,6 +26,7 @@ public class Juego extends JFrame {
 	public static final String Actualizar="actualizar";
 	public static final String Registrar="registrar";
 	private JButton btnNewButton_3;
+	public static final String Regreso="regreso";
 
 	
 
@@ -83,11 +84,24 @@ public class Juego extends JFrame {
 		contentPane.add(btnNewButton_2);
 		
 		btnNewButton_3 = new JButton("Regresar");
+		btnNewButton.setActionCommand(Registrar);
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_3.setBounds(0, 233, 99, 25);
 		contentPane.add(btnNewButton_3);
 	}
 	
+	public static String getRegreso() {
+		return Regreso;
+	}
+
+	public JButton getBtnNewButton_3() {
+		return btnNewButton_3;
+	}
+
+	public void setBtnNewButton_3(JButton btnNewButton_3) {
+		this.btnNewButton_3 = btnNewButton_3;
+	}
+
 	public static String getEliminar() {
 		return Eliminar;
 	}
