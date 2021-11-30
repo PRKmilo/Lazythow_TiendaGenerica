@@ -56,6 +56,7 @@ public class Controller implements ActionListener{
 		gui.getproducto().getBtnNewButton().addActionListener(oyenteregresoaccionesproducto);
 		gui.getCliente().getBtnNewButton_3().addActionListener(oyenteregresoaccionescliente);
 		gui.getVenta().getBtnNewButton().addActionListener(oyenteregresoaccionesventa);
+		gui.getregistro().getBtnNewButton().addActionListener(oyenteregresoformulariotienda);
 		
 	}
 	@Override

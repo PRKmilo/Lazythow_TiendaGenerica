@@ -34,5 +34,6 @@
 	<classpathentry kind="lib" path="libreriaspdf/pdftest-7.1.3-javadoc.jar"/>
 	<classpathentry kind="lib" path="libreriaspdf/pdftest-7.1.3-sources.jar"/>
 	<classpathentry kind="lib" path="libreriaspdf/sign-7.1.3.jar"/>
+	<classpathentry kind="lib" path="Excel/poi-3.16.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

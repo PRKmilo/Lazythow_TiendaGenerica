@@ -13,6 +13,8 @@ public class excel {
 	public static void main(String[] args) throws FileNotFoundException, IOException{
 		
 		VentasFile archivo = new VentasFile();
+		ClienteDAO cliente = new ClienteDAO();
+		VentasDAO venta=new VentasDAO();
 		try   
 		{ 
 		//creating an instance of Workbook class    
@@ -26,7 +28,8 @@ public class excel {
 		for (int i =0; i< archivo.leerArchivocliente().size();i++) {
 			
 			String indice = String.valueOf(i);
-			HSSFRow rowhead = sheet.createRow((short)0);
+			HSSFRow row = sheet.createRow((short)i);
+			row.createCell(0).setCellValue(archivo.leerArchivocliente().get(i).getNombre());
 		}
 		//creating the 0th row using the createRow() method  
 		 
