@@ -80,7 +80,7 @@ public class Controller implements ActionListener{
 		if(e.getActionCommand().equals(gui.Pdf)) {
 			System.out.println("usted espciho pdf");
 			crearpdf generatePDFFileIText = new crearpdf();
-			generatePDFFileIText.createPDF(new File("./Data/plan6.pdf"));
+			generatePDFFileIText.createPDF(new File("./Data/InformeEmpresa.pdf"));
 			
 		}
 		if (e.getActionCommand().equals(gui.Registro)) {
