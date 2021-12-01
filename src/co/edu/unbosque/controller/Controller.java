@@ -36,6 +36,7 @@ public class Controller implements ActionListener{
 		gui.getCliente().getBtnNewButton_2().addActionListener(oyenteDeaccioncliente);
 		gui.getCliente().getBtnNewButton_1().addActionListener(oyenteDeaccioncliente);
 		gui.getCliente().getBtnNewButton().addActionListener(oyenteDeaccioncliente);
+		gui.getCliente().getBtnNewButton_3().addActionListener(oyenteDeaccioncliente);
 		gui.getForm_cliente().getBtnRegistrarTienda().addActionListener(oyendedecliente2);
 		gui.getregistro().getBtnRegistrarTienda1().addActionListener(oyendetienda);
 		gui.getVenta().getBtnActualizarVenta().addActionListener(oyenteaccionventa);

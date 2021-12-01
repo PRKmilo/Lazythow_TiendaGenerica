@@ -17,15 +17,17 @@ public class ClienteDAO {
 		indice=0;
 
 	}
-	public void agregarCliente(ClienteDTO cliente){
-		
+	public ArrayList<ClienteDTO> devuelvearraylist(){
 		ArrayList<ClienteDTO> nomina1=new ArrayList<ClienteDTO>();
 		if(archivoVenta.leerArchivocliente() == null) {
 			nomina1=new ArrayList<ClienteDTO>();
 		}else {
 			 nomina1 = archivoVenta.leerArchivocliente();
 		}
-		NominaCliente = nomina1;
+		return nomina1;
+	}
+	public void agregarCliente(ClienteDTO cliente){	
+		NominaCliente = devuelvearraylist();
 		NominaCliente.add(cliente);
 		System.out.println(NominaCliente.size()+" este es el tamaño del arraylist de cliente");
 		archivoVenta.escribirArchivocliente(NominaCliente);
@@ -33,15 +35,10 @@ public class ClienteDAO {
 	}
 	public ClienteDTO buscarcliente(String cedula) {
 		ClienteDTO clienteencontrado=new ClienteDTO(null,null,null,null,null);
-		ArrayList<ClienteDTO> nomina1=new ArrayList<ClienteDTO>();
-		if(archivoVenta.leerArchivocliente() == null) {
-			nomina1=new ArrayList<ClienteDTO>();
-		}else {
-			 nomina1 = archivoVenta.leerArchivocliente();
-		}
-		for(int x=0;x<nomina1.size();x++) {
-			if(nomina1.get(x).getCedula().equals(cedula)) {
-				clienteencontrado=nomina1.get(x);
+		
+		for(int x=0;x<devuelvearraylist().size();x++) {
+			if(devuelvearraylist().get(x).getCedula().equals(cedula)) {
+				clienteencontrado=devuelvearraylist().get(x);
 				indice=x;
 			}
 		}
@@ -50,65 +47,45 @@ public class ClienteDAO {
 	
 	public boolean existecliente(String cedula) {
 		boolean respuesta=false;
-		ArrayList<ClienteDTO> nomina1=new ArrayList<ClienteDTO>();
-		if(archivoVenta.leerArchivocliente() == null) {
-			nomina1=new ArrayList<ClienteDTO>();
-		}else {
-			 nomina1 = archivoVenta.leerArchivocliente();
-		}
-		System.out.println(nomina1.size()+" este es el tamaño de el arraylist");
-		for(int x=0;x<nomina1.size();x++) {
-			if(nomina1.get(x).getCedula().equals(cedula)) {
+		
+		System.out.println(devuelvearraylist().size()+" este es el tamaño de el arraylist");
+		for(int x=0;x<devuelvearraylist().size();x++) {
+			if(devuelvearraylist().get(x).getCedula().equals(cedula)) {
 				respuesta=true;
 			}
-			else {
-				respuesta=false;
-			}
+	
 		}
 		return respuesta;
 	}
-	public int indice(String cedula) {
-	int respuesta=0;
-	ArrayList<ClienteDTO> nomina1=new ArrayList<ClienteDTO>();
-	if(archivoVenta.leerArchivocliente() == null) {
-		nomina1=new ArrayList<ClienteDTO>();
-	}else {
-		 nomina1 = archivoVenta.leerArchivocliente();
-	}
-	for(int x=0;x<nomina1.size();x++) {
-		if(nomina1.get(x).getCedula().equals(cedula)) {
-			respuesta=x; 
-		}else {
-			respuesta=-1;
-		}	
-	}
-	return respuesta;
-	}
+	
 	
 	public String eliminarcliente(String cedula) {
 		String respuesta="se elimino correctamente";
 		
 		if(existecliente(cedula)==false) {
+			;
 			respuesta="Cliente no encontrado";
 		}
 		else {
 			ArrayList<ClienteDTO> nomina1=new ArrayList<ClienteDTO>();
-			if(archivoVenta.leerArchivocliente() == null) {
-				nomina1=new ArrayList<ClienteDTO>();
-			}else {
-				 nomina1 = archivoVenta.leerArchivocliente();
+			nomina1=devuelvearraylist();
+			System.out.println(nomina1.size()+" esta es la size del objeto antes del remove xxxxxxx");
+			for(int y=0;y<nomina1.size();y++) {
+				System.out.println(nomina1.get(y).getCedula()+" esta es la cedula de la persona con el indice antes del remove "+y);
 			}
-			System.out.println(buscarcliente(cedula).getCedula()+" este es la cedula del objeto que se va a remover");
-			System.out.println(indice(cedula)+" este es el indice que se encuentra");
 			for(int x=0;x<nomina1.size();x++) {
-				System.out.println(nomina1.get(x).getCedula()+" este es el objeto antes del remove");
+				if(nomina1.get(x).getCedula().equals(cedula)) {
+					nomina1.remove(x);
+					System.out.println(x+" este es el indice del objeto a remover xxx");
+					archivoVenta.escribirArchivocliente(nomina1);
+					
+				}
 			}
-			nomina1.remove(indice(cedula));
-			for(int x=0;x<nomina1.size();x++) {
-				System.out.println(nomina1.get(x).getCedula()+" este es el objeto despues del remove");
+			for(int y=0;y<nomina1.size();y++) {
+				System.out.println(nomina1.get(y).getCedula()+" esta es la cedula de la persona con el indice despues del remove "+y);
 			}
-			System.out.println(nomina1.size()+" este es el tamaño del array despues del remove");
-			archivoVenta.escribirArchivocliente(nomina1);
+			
+			System.out.println(nomina1.size()+" este es el size despues del remove");
 		}
 		return respuesta;
 	}

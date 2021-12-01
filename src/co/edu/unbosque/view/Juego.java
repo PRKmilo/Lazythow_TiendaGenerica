@@ -84,7 +84,7 @@ public class Juego extends JFrame {
 		contentPane.add(btnNewButton_2);
 		
 		btnNewButton_3 = new JButton("Regresar");
-		btnNewButton.setActionCommand(Registrar);
+		btnNewButton.setActionCommand(Eliminar);
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton_3.setBounds(0, 233, 99, 25);
 		contentPane.add(btnNewButton_3);
