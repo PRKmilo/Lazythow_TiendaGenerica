@@ -106,11 +106,14 @@ public class Controller implements ActionListener{
 				}else {
 					JOptionPane.showMessageDialog(null, "la persona con la cedula ingresada no esta en base de datos");
 				}
+	
 			}
 			if(e.getActionCommand().equals(gui.getCliente().Eliminar)) {
 				System.out.println("se espicho eliminar");
 				String cedula=JOptionPane.showInputDialog("ingrese la cedula de el cliente que desea eliminar");
 				JOptionPane.showMessageDialog(null,Fachada.getClientedao().eliminarcliente(cedula));
+				
+				
 			}
 			if(e.getActionCommand().equals(gui.getCliente().Registrar)) {
 				System.out.println("se espicho registrar");
@@ -300,6 +303,7 @@ public class Controller implements ActionListener{
 			cliente.setTelefono(gui.getFormactualizacioncliente().getTxttelefono().getText());
 			cliente.setCorreo(gui.getFormactualizacioncliente().getTtxtcorreoelectronic().getText());
 			JOptionPane.showMessageDialog(null, "se ingresaron y actulizaron los datos bien");
+			gui.getFormactualizacioncliente().setVisible(false);
 		}
 	};
 	ActionListener oyenteactualizarproducto=new ActionListener() {
