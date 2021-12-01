@@ -46,14 +46,15 @@ public class ProductosDAO {
 		if(existeproducto(codigo)==false) {
 			respuesta="producto no encontrado";
 		}else {
-			
-			for(int x=0;x<devuelve_arraylist().size();x++) {
-				if(devuelve_arraylist().get(x).getCodigo().equals(codigo)) {
-					devuelve_arraylist().remove(x);
+			ArrayList<ProductoDTO> nomina1=new ArrayList<ProductoDTO>();
+			nomina1=devuelve_arraylist();
+			for(int x=0;x<nomina1.size();x++) {
+				if(nomina1.get(x).getCodigo().equals(codigo)) {
+					nomina1.remove(x);
 				}
 			}
 			
-			archivoVenta.escribirArchivoproducto(devuelve_arraylist());
+			archivoVenta.escribirArchivoproducto(nomina1);
 		}
 		return respuesta;
 	}
