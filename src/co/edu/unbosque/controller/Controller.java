@@ -43,12 +43,13 @@ public class Controller implements ActionListener{
 		gui.getVenta().getBtnEliminarVenta().addActionListener(oyenteaccionventa);
 		gui.getVenta().getBtnRegistrarVenta().addActionListener(oyenteaccionventa);
 		gui.getForm_v().getBtnRegistrarProducto().addActionListener(oyentedeventaformulario);
-		gui.getproducto().getBtnActualizarProducto().addActionListener(oyentedeacciondeporducto);
+		gui.getproducto().getBtnActualizarProducto().addActionListener(oyentebotonactualiza);
 		gui.getproducto().getBtnEliminarProducto().addActionListener(oyentedeacciondeporducto);
 		gui.getproducto().getBtnRegistrarProducto().addActionListener(oyentedeacciondeporducto);
 		gui.getForm_p().getBtnRegistrarProducto().addActionListener(oyenteregistroproducto);
 		gui.getFormactualizacioncliente().getBtnactualizarcliente().addActionListener(oyenteactualizarcliente);
 		gui.getFormularioactualizacionporducto().getBtnRegistrarProducto().addActionListener(oyenteactualizarproducto);
+		
 		gui.getForm_v().getBtnTotalizar().addActionListener(oyentedeventaformulario);
 		gui.getForm_v().getBtnpagar().addActionListener(oyentedeventaformulario);
 		gui.getForm_cliente().getBtnNewButton().addActionListener(oyendederegresoformulariocliente);
@@ -260,6 +261,24 @@ public class Controller implements ActionListener{
 		}
 		
 	};
+	ActionListener oyentebotonactualiza=new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("usted espicho actualizar producto");
+			String codigo=JOptionPane.showInputDialog("ingrese el codigo del producto que desea actualizarle el precio");
+			codproducto=codigo;
+			if(Fachada.getProductodao().existeproducto(codigo)) {
+				int nuevovalor=Integer.parseInt(JOptionPane.showInputDialog("ingrese el nuevo valor para venta"));
+				JOptionPane.showMessageDialog(null,Fachada.getProductodao().actualizarproductos(codigo, nuevovalor));
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "producto no encontrado");
+			}
+		}
+		
+	};
 	ActionListener oyenteregistroproducto= new ActionListener(){
 
 		@Override
@@ -294,12 +313,12 @@ public class Controller implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			System.out.println("usted espicho oyente de actualizacion de cliente");
-			ClienteDTO cliente=Fachada.getClientedao().buscarcliente(cedula1);
-			cliente.setDireccion(gui.getFormactualizacioncliente().getTxtdireccion().getText());
-			cliente.setNombre(gui.getFormactualizacioncliente().getTxtNombre().getText());
-			cliente.setTelefono(gui.getFormactualizacioncliente().getTxttelefono().getText());
-			cliente.setCorreo(gui.getFormactualizacioncliente().getTtxtcorreoelectronic().getText());
-			JOptionPane.showMessageDialog(null, "se ingresaron y actulizaron los datos bien");
+			String cedula=cedula1;
+			String direccion=(gui.getFormactualizacioncliente().getTxtdireccion().getText());
+			String nombre=(gui.getFormactualizacioncliente().getTxtNombre().getText());
+			String telefono=(gui.getFormactualizacioncliente().getTxttelefono().getText());
+			String correo=(gui.getFormactualizacioncliente().getTtxtcorreoelectronic().getText());
+			JOptionPane.showMessageDialog(null, Fachada.getClientedao().actualizacioncliente(cedula, direccion, nombre, correo, telefono));
 		}
 	};
 	ActionListener oyenteactualizarproducto=new ActionListener() {

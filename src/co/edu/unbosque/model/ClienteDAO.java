@@ -35,16 +35,30 @@ public class ClienteDAO {
 	}
 	public ClienteDTO buscarcliente(String cedula) {
 		ClienteDTO clienteencontrado=new ClienteDTO(null,null,null,null,null);
-		
-		for(int x=0;x<devuelvearraylist().size();x++) {
-			if(devuelvearraylist().get(x).getCedula().equals(cedula)) {
-				clienteencontrado=devuelvearraylist().get(x);
+		ArrayList<ClienteDTO> nomina1=devuelvearraylist();
+		for(int x=0;x<nomina1.size();x++) {
+			if(nomina1.get(x).getCedula().equals(cedula)) {
+				clienteencontrado=nomina1.get(x);
 				indice=x;
 			}
 		}
 		return clienteencontrado;
 	}
-	
+	public String actualizacioncliente(String cedula,String direccion,String nombre,String correo,String telefono) {
+		String  respuesta="se ha actualizado la base de datos";
+		ArrayList<ClienteDTO> nomina1=new ArrayList<ClienteDTO>();
+		nomina1=devuelvearraylist();
+		for(int t=0;t<nomina1.size();t++) {
+			if(nomina1.get(t).getCedula().equals(cedula)) {
+				nomina1.get(t).setDireccion(direccion);
+				nomina1.get(t).setNombre(nombre);
+				nomina1.get(t).setCorreo(correo);
+				nomina1.get(t).setTelefono(telefono);
+			}
+		}
+		archivoVenta.escribirArchivocliente(nomina1);
+		return respuesta;
+	}
 	public boolean existecliente(String cedula) {
 		boolean respuesta=false;
 		

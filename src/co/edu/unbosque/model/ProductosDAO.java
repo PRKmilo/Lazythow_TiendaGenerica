@@ -32,9 +32,9 @@ public class ProductosDAO {
 	}
 	public boolean existeproducto(String codigo) {
 		boolean respuesta=false;
-		
-		for(int x=0;x<devuelve_arraylist().size();x++) {
-			if(devuelve_arraylist().get(x).getCodigo().equals(codigo)) {
+		NominaProducto = devuelve_arraylist();
+		for(int x=0;x<NominaProducto.size();x++) {
+			if(NominaProducto.get(x).getCodigo().equals(codigo)) {
 				respuesta=true;
 			}
 		}
@@ -60,14 +60,25 @@ public class ProductosDAO {
 	}
 	public ProductoDTO buscarproducto(String codigo) {
 		ProductoDTO productoencontrado=new ProductoDTO(null,null,0,0,0);
-		
-		for(int x=0;x<devuelve_arraylist().size();x++) {
-			if(devuelve_arraylist().get(x).getCodigo().equals(codigo)) {
-				productoencontrado=devuelve_arraylist().get(x);
+		ArrayList<ProductoDTO> nomina1=devuelve_arraylist();
+		for(int x=0;x<nomina1.size();x++) {
+			if(nomina1.get(x).getCodigo().equals(codigo)) {
+				productoencontrado=nomina1.get(x);
 			}
 		}
 		return productoencontrado;
 		
+	}
+	public String actualizarproductos(String codigo,int valornuevo ) {
+		String respuesta="Se ha actualizado la base de datos";
+		ArrayList<ProductoDTO> nomina1=devuelve_arraylist();
+		for(int i=0;i<nomina1.size();i++) {
+			if(nomina1.get(i).getCodigo().equals(codigo)) {
+				nomina1.get(i).setPrecioVenta(valornuevo);
+			}
+		}
+		archivoVenta.escribirArchivoproducto(nomina1);
+		return respuesta;
 	}
 	public ArrayList<ProductoDTO> getNominaNominaProducto() {
 		return NominaProducto;
